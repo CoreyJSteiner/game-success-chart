@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import useLineConfigs from './hooks/LineConfigs'
 import LineConfigDisplay from './components/LineConfigDisplay'
+import Chart from './components/Chart'
+import ButtonMain from './components/ButtonMain'
 import { getRandomColor } from './utils'
 
 function App () {
@@ -12,7 +14,7 @@ function App () {
     removeConfig
   } = useLineConfigs()
   const [yAxisLocked, setYAxisLocked] = useState(true)
-  const [numTrials, setNumTrials] = useState(50000)
+  const [numTrials, setNumTrials] = useState(100)
 
   //On Component Mount
   useEffect(() => {
@@ -26,42 +28,34 @@ function App () {
 
   return (
     <div>
-      <div className='loading-overlay' id='loadingOverlay'>
-        <div className='spinner'></div>
-      </div>
-
-      <div style={{ maxWidth: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
-        <canvas id='chart'></canvas>
-      </div>
-
+      <Chart />
       <div style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
-            <button
-              className='add-config-btn'
-              onClick={() => console.log('addConfiguration()')}
-            >
-              Add Configuration
-            </button>
+            <ButtonMain label='Add Configuration' handleClick={addConfig} />
           </div>
           <div>
-            <button onClick={() => console.log('runSim')}>
-              Run Simulation
-            </button>
+            <ButtonMain
+              label='Run Simulation'
+              handleClick={() => console.log('runSim')}
+            />
           </div>
         </div>
 
-        {lineConfigs.map(config => (
-          <LineConfigDisplay
-            key={config.id}
-            lineConfig={config}
-            onUpdate={updated => updateConfig(config.id, updated)}
-            onRemove={() => removeConfig(config.id)}
-            onDuplicate={() => duplicateConfig(config.id)}
-          />
-        ))}
+        <div id='configurations-container'>
+          {lineConfigs.map(config => (
+            <LineConfigDisplay
+              key={config.id}
+              lineConfig={config}
+              onUpdate={updated => updateConfig(config.id, updated)}
+              onRemove={() => removeConfig(config.id)}
+              onDuplicate={() => duplicateConfig(config.id)}
+            />
+          ))}
+        </div>
 
         <div
+          id='settings-buttons-container'
           style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -70,10 +64,11 @@ function App () {
           }}
         >
           <div style={{ display: 'flex', gap: '10px' }}>
-            <button onClick={() => console.log('toggleYAxis()')}>
-              Toggle Y-Axis Lock (0-100%)
-            </button>
-            <button onClick={() => console.log('exportToCSV()')}>
+            <ButtonMain
+              label='Toggle Y-Axis Lock (0-100%)'
+              handleClick={() => setYAxisLocked(!yAxisLocked)}
+            />
+            {/* <button onClick={() => console.log('exportToCSV()')}>
               Export to CSV
             </button>
             <button onClick={() => console.log('importFromCSV()')}>
@@ -84,7 +79,7 @@ function App () {
             </button>
             <button onClick={() => console.log('importFromJSON()')}>
               Import JSON
-            </button>
+            </button> */}
           </div>
           <input
             id='num-trials-input'
@@ -93,18 +88,6 @@ function App () {
             value={numTrials}
           />
         </div>
-        <input
-          id='csv-file-input'
-          type='file'
-          accept='.csv'
-          style={{ display: 'none' }}
-        />
-        <input
-          id='json-file-input'
-          type='file'
-          accept='.json'
-          style={{ display: 'none' }}
-        />
       </div>
     </div>
   )

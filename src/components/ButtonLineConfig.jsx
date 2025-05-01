@@ -1,4 +1,4 @@
-const ButtonDieConfig = ({ label, iconName, handleClick }) => {
+const ButtonLineConfig = ({ label, iconName, handleClick }) => {
   // const handleClick = val => {
   //   setCompVal(val)
   // }
@@ -15,4 +15,4 @@ const ButtonDieConfig = ({ label, iconName, handleClick }) => {
   )
 }
 
-export default ButtonDieConfig
+export default ButtonLineConfig

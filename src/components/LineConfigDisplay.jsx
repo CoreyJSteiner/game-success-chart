@@ -1,5 +1,5 @@
 import InputNum from './InputNum'
-import ButtonDieConfig from './ButtonDieConfig'
+import ButtonLineConfig from './ButtonLineConfig'
 
 const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
   const handleChange = (field, value) => {
@@ -10,9 +10,9 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
     <div className='config-box' id={lineConfig.id}>
       <div className='config-header'>
         <div className='config-controls'>
-          <ButtonDieConfig iconName='arrow_left' />
-          <ButtonDieConfig iconName='arrow_right' />
-          <ButtonDieConfig
+          <ButtonLineConfig iconName='arrow_left' />
+          <ButtonLineConfig iconName='arrow_right' />
+          <ButtonLineConfig
             iconName='content_copy'
             handleClick={e => onDuplicate(e.target.id)}
           />
@@ -42,7 +42,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
             <option value='dashDot'>Dash-Dot</option>
           </select>
         </div>
-        <ButtonDieConfig
+        <ButtonLineConfig
           iconName='delete_forever'
           handleClick={e => onRemove(e.target.id)}
         />
