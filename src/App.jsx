@@ -48,7 +48,7 @@ function App () {
       const datasets = results.map((config, index) => ({
         label: config.name,
         data: allKeys.map(k => config.data[k] || 0),
-        borderColor: config.color,
+        borderColor: config.lineColor,
         borderDash: getBorderDash(config.lineStyle),
         tension: 0.1
       }))
