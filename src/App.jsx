@@ -41,13 +41,9 @@ function App () {
         }))
       )
 
-      console.dir(results, { depth: null })
-
       const allKeys = [...new Set(results.flatMap(r => Object.keys(r.data)))]
         .map(Number)
         .sort((a, b) => a - b)
-
-      console.log(allKeys)
 
       const datasets = results.map((config, index) => ({
         label: config.name,
@@ -82,7 +78,6 @@ function App () {
   }
 
   const runTrial = config => {
-    console.dir(config, { depth: null })
     let dice = []
     dice.push(
       ...Array(config.d4)
@@ -154,7 +149,6 @@ function App () {
       function processChunk () {
         for (let i = 0; i < chunkSize && completed < trials; i++, completed++) {
           const totalSuccesses = runTrial(config)
-          console.log(totalSuccesses)
 
           results[totalSuccesses] = (results[totalSuccesses] || 0) + 1
         }
