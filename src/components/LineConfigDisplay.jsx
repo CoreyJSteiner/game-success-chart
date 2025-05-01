@@ -29,7 +29,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
             type='color'
             className='color-picker'
             onChange={e => handleChange('lineColor', e.target.value)}
-            value={lineConfig.color}
+            value={lineConfig.lineColor}
           />
           <select
             className='line-style'
