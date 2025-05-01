@@ -207,10 +207,10 @@ function App () {
           }}
         >
           <div style={{ display: 'flex', gap: '10px' }}>
-            <ButtonMain
+            {/* <ButtonMain
               label='Toggle Y-Axis Lock (0-100%)'
               handleClick={() => setYAxisLocked(!yAxisLocked)}
-            />
+            /> */}
             {/* <button onClick={() => console.log('exportToCSV()')}>
               Export to CSV
             </button>
