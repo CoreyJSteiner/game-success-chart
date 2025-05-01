@@ -8,3 +8,7 @@ export const getRandomColor = () => {
 }
 
 export const logHey = () => console.log('hey')
+
+export const rollDie = sides => {
+  return Math.floor(Math.random() * sides) + 1
+}
