@@ -1,7 +1,7 @@
 import InputNum from './InputNum'
 import ButtonDieConfig from './ButtonDieConfig'
 
-const DieConfig = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
+const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
   const handleChange = (field, value) => {
     onUpdate({ [field]: value })
   }
@@ -68,4 +68,4 @@ const DieConfig = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
   )
 }
 
-export default DieConfig
+export default LineConfigDisplay
