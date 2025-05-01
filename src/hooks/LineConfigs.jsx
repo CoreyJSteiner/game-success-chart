@@ -4,16 +4,15 @@ import { getRandomColor } from '../utils'
 export default function useLineConfigs () {
   const [lineConfigs, setLineConfigs] = useState([])
 
-  const addConfig = (
-    config = {
-      name: '',
-      lineColor: getRandomColor(),
-      lineStyle: 'solid',
-      d4: 0,
-      d10: 1,
-      d12: 0
+  const addConfig = input => {
+    const config = {
+      name: input.name || '1d10',
+      lineColor: input.lineColor || getRandomColor(),
+      lineStyle: input.lineStyle || 'solid',
+      d4: input.d4 || 0,
+      d10: input.d10 || 0,
+      d12: input.d12 || 0
     }
-  ) => {
     setLineConfigs([...lineConfigs, { ...config, id: Date.now() }])
   }
 

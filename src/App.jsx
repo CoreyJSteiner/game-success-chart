@@ -21,7 +21,7 @@ function App () {
   const initialLoadRef = useRef(true)
 
   useEffect(() => {
-    addConfig()
+    addConfig({ name: '1d12+1d4', d12: 1, d4: 1, lineColor: '#7DF9FF' })
   }, [])
 
   useEffect(() => {
