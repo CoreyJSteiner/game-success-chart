@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import useLineConfigs from './hooks/LineConfigs'
 import LineConfigDisplay from './components/LineConfigDisplay'
 import ChartDisplay from './components/ChartDisplay'
@@ -14,13 +14,22 @@ function App () {
     removeConfig
   } = useLineConfigs()
   const [yAxisLocked, setYAxisLocked] = useState(true)
-  const [numTrials, setNumTrials] = useState(100)
+  const [numTrials, setNumTrials] = useState(50000)
   const [currentData, setCurrentData] = useState({})
 
-  //On Component Mount
+  //Initial Load
+  const initialLoadRef = useRef(true)
+
   useEffect(() => {
     addConfig()
   }, [])
+
+  useEffect(() => {
+    if (initialLoadRef.current && lineConfigs.length > 0) {
+      initialLoadRef.current = false
+      runSimulation()
+    }
+  }, [lineConfigs])
 
   //Handlers - To be moved
   const handleTrialsChange = num => {
