@@ -12,48 +12,60 @@ function App () {
     addConfiguration()
   }, [])
 
-  const addConfiguration = () => {
-    const newConfig = {
-      id: Date.now(),
+  const addConfiguration = (
+    config = {
       name: '',
-      color: getRandomColor(),
+      lineColor: getRandomColor(),
       lineStyle: 'solid',
       d4: 0,
       d10: 1,
       d12: 0
     }
-    setLineConfigs([...lineConfigs, newConfig])
+  ) => {
+    setLineConfigs([...lineConfigs, { ...config, id: Date.now() }])
   }
 
   const updateConfig = (id, updated) => {
-    console.log(id)
-    console.log(updated)
     setLineConfigs(
-      lineConfigs.map(config => {
-        return config.id === id ? { ...config, ...updated } : config
-      })
+      lineConfigs.map(config =>
+        config.id === id ? { ...config, ...updated } : config
+      )
     )
-    console.dir(lineConfigs, { depth: null })
   }
 
   const removeConfig = id => {
     setLineConfigs(lineConfigs.filter(config => config.id !== id))
   }
 
+  const duplicateConfig = id => {
+    const config = getConfigById(id)
+    console.dir(config)
+    if (config) addConfiguration(config)
+  }
+
+  const getConfigById = id => {
+    let config = null
+    lineConfigs.forEach(c => {
+      console.log(`${id}===${c.id}`)
+      if (c.id === id) {
+        config = c
+      }
+    })
+
+    return config
+  }
+
   return (
     <div>
-      {lineConfigs.map(config => {
-        console.dir(config, { depth: null })
-
-        return (
-          <DieConfig
-            key={config.id}
-            lineConfig={config}
-            onUpdate={updated => updateConfig(config.id, updated)}
-            onRemove={() => removeConfig(config.id)}
-          />
-        )
-      })}
+      {lineConfigs.map(config => (
+        <DieConfig
+          key={config.id}
+          lineConfig={config}
+          onUpdate={updated => updateConfig(config.id, updated)}
+          onRemove={() => removeConfig(config.id)}
+          onDuplicate={() => duplicateConfig(config.id)}
+        />
+      ))}
     </div>
   )
 }

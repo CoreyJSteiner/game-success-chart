@@ -1,7 +1,7 @@
 import InputNum from './InputNum'
 import ButtonDieConfig from './ButtonDieConfig'
 
-const DieConfig = ({ lineConfig, onUpdate, onRemove }) => {
+const DieConfig = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
   const handleChange = (field, value) => {
     onUpdate({ [field]: value })
   }
@@ -12,7 +12,10 @@ const DieConfig = ({ lineConfig, onUpdate, onRemove }) => {
         <div className='config-controls'>
           <ButtonDieConfig iconName='arrow_left' />
           <ButtonDieConfig iconName='arrow_right' />
-          <ButtonDieConfig iconName='content_copy' />
+          <ButtonDieConfig
+            iconName='content_copy'
+            handleClick={e => onDuplicate(e.target.id)}
+          />
         </div>
         <div>
           <input
@@ -25,7 +28,7 @@ const DieConfig = ({ lineConfig, onUpdate, onRemove }) => {
           <input
             type='color'
             className='color-picker'
-            onChange={e => handleChange('name', e.target.value)}
+            onChange={e => handleChange('lineColor', e.target.value)}
             value={lineConfig.color}
           />
           <select
@@ -39,7 +42,10 @@ const DieConfig = ({ lineConfig, onUpdate, onRemove }) => {
             <option value='dashDot'>Dash-Dot</option>
           </select>
         </div>
-        <ButtonDieConfig iconName='delete_forever' />
+        <ButtonDieConfig
+          iconName='delete_forever'
+          handleClick={e => onRemove(e.target.id)}
+        />
       </div>
       <div className='dice-inputs'>
         <InputNum

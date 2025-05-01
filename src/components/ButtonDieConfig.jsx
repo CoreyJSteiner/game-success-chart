@@ -1,14 +1,14 @@
-const ButtonDieConfig = props => {
+const ButtonDieConfig = ({ label, iconName, handleClick }) => {
   // const handleClick = val => {
   //   setCompVal(val)
   // }
 
   return (
     <div className='button-die-config'>
-      <button onClick={props.handleClick}>
-        {props.label && props.label}
-        {props.iconName && (
-          <span className='material-symbols-outlined'>{props.iconName}</span>
+      <button onClick={handleClick}>
+        {label && label}
+        {iconName && (
+          <span className='material-symbols-outlined'>{iconName}</span>
         )}
       </button>
     </div>
