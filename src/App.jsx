@@ -61,7 +61,9 @@ function App () {
         }))
       )
 
-      const allKeys = [...new Set(results.flatMap(r => Object.keys(r.data)))]
+      const allKeys = [
+        ...new Set(results.flatMap(result => Object.keys(result.data)))
+      ]
         .map(Number)
         .sort((a, b) => a - b)
 
@@ -85,8 +87,6 @@ function App () {
             return []
         }
       }
-
-      const processedResults = results.map(r => r.data)
 
       setCurrentData({
         configs,
@@ -165,27 +165,27 @@ function App () {
       const results = {}
       const trials = numTrials
       let completed = 0
-      const chunkSize = 1000 // Process in chunks to keep UI responsive
+      const batchSize = 1000
 
-      function processChunk () {
-        for (let i = 0; i < chunkSize && completed < trials; i++, completed++) {
+      function processBatch () {
+        for (let i = 0; i < batchSize && completed < trials; i++, completed++) {
           const totalSuccesses = runTrial(config)
 
           results[totalSuccesses] = (results[totalSuccesses] || 0) + 1
         }
 
         if (completed < trials) {
-          setTimeout(processChunk, 0)
+          setTimeout(processBatch, 0)
         } else {
           const output = {}
-          Object.keys(results).forEach(k => {
-            output[k] = results[k] / trials
+          Object.keys(results).forEach(key => {
+            output[key] = results[key] / trials
           })
           resolve(output)
         }
       }
 
-      processChunk()
+      processBatch()
     })
   }
 
