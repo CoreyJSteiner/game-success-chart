@@ -9,9 +9,6 @@ const ChartDisplay = ({ currentData, yAxisLocked }) => {
   useEffect(() => {
     if (!datasets) return
 
-    console.dir(datasets, { depth: null })
-    console.dir(allKeys, { depth: null })
-
     const ctx = chartRef.current.getContext('2d')
     const chart = new Chart(ctx, {
       type: 'line',

@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react'
-import useLineConfigs from './hooks/LineConfigs'
-import useRunSim from './hooks/RunSim'
+import useLineConfigs from './components/LineConfigs'
+import useRunSim from './components/RunSim'
 import LineConfigDisplay from './components/LineConfigDisplay'
 import ChartDisplay from './components/ChartDisplay'
 import ButtonMain from './components/ButtonMain'
 import { getRandomColor, rollDie } from './utils'
 import LoadingOverlay from './components/LoadingOverlay'
+import useJsonExport from './components/JsonExport'
+import JsonImportButton from './components/JsonImport'
 
 function App () {
   const {
@@ -13,10 +15,13 @@ function App () {
     addConfig,
     duplicateConfig,
     updateConfig,
-    removeConfig
+    removeConfig,
+    clearConfigs,
+    replaceConfigs
   } = useLineConfigs()
+  const { exportToJSON } = useJsonExport()
   const { currentData, numTrials, setNumTrials, runSimulation } = useRunSim()
-  const [yAxisLocked, setYAxisLocked] = useState(true)
+  const [yAxisLocked] = useState(true)
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
 
@@ -86,7 +91,7 @@ function App () {
               id='settings-buttons-container'
               style={{
                 display: 'flex',
-                justifyContent: 'right',
+                justifyContent: 'space-between',
                 alignItems: 'center',
                 marginTop: '1rem'
               }}
@@ -101,27 +106,33 @@ function App () {
             </button>
             <button onClick={() => console.log('importFromCSV()')}>
               Import from CSV
-            </button>
-            <button onClick={() => console.log('exportToJSON()')}>
-              Export JSON
-            </button>
-            <button onClick={() => console.log('importFromJSON()')}>
-              Import JSON
             </button> */}
+                <button onClick={() => exportToJSON(lineConfigs)}>
+                  Export JSON
+                </button>
+                <JsonImportButton
+                  replaceConfigs={replaceConfigs}
+                  importRunSim={internalConfig =>
+                    runSimulation(setIsLoading, internalConfig)
+                  }
+                />
+                <ButtonMain label='Clear Configs' handleClick={clearConfigs} />
               </div>
-              <input
-                id='num-trials-input'
-                onChange={handleTrialsChange}
-                type='number'
-                value={numTrials}
-              />
-              <input
-                id='bg-color-pick-input'
-                type='color'
-                className='color-picker'
-                onChange={handleBackgroundColorChange}
-                value={bgColor}
-              />
+              <div>
+                <input
+                  id='num-trials-input'
+                  onChange={handleTrialsChange}
+                  type='number'
+                  value={numTrials}
+                />
+                <input
+                  id='bg-color-pick-input'
+                  type='color'
+                  className='color-picker'
+                  onChange={handleBackgroundColorChange}
+                  value={bgColor}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { rollDie } from '../utils'
 
-export default function useRunSim () {
+const useRunSim = () => {
   const [currentData, setCurrentData] = useState({})
   const [numTrials, setNumTrials] = useState(10)
 
@@ -157,3 +157,5 @@ export default function useRunSim () {
     simulateConfiguration
   }
 }
+
+export default useRunSim

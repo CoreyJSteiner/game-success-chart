@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { getRandomColor } from '../utils'
 
-export default function useLineConfigs () {
+const useLineConfigs = () => {
   const [lineConfigs, setLineConfigs] = useState([])
 
   const addConfig = input => {
@@ -13,7 +13,7 @@ export default function useLineConfigs () {
       d10: input.d10 || 0,
       d12: input.d12 || 0
     }
-    setLineConfigs([...lineConfigs, { ...config, id: Date.now() }])
+    setLineConfigs([...lineConfigs, { ...config, id: crypto.randomUUID() }])
   }
 
   const updateConfig = (id, updated) => {
@@ -46,5 +46,28 @@ export default function useLineConfigs () {
     return config
   }
 
-  return { lineConfigs, addConfig, duplicateConfig, updateConfig, removeConfig }
+  const clearConfigs = () => {
+    setLineConfigs([])
+  }
+
+  const replaceConfigs = newConfigs => {
+    const updatedConfigs = newConfigs.map(config => ({
+      ...config,
+      id: crypto.randomUUID()
+    }))
+    setLineConfigs(updatedConfigs)
+  }
+
+  return {
+    lineConfigs,
+    setLineConfigs,
+    addConfig,
+    duplicateConfig,
+    updateConfig,
+    removeConfig,
+    clearConfigs,
+    replaceConfigs
+  }
 }
+
+export default useLineConfigs
