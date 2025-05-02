@@ -16,6 +16,7 @@ function App () {
   } = useLineConfigs()
   const [yAxisLocked, setYAxisLocked] = useState(true)
   const [numTrials, setNumTrials] = useState(10)
+  const [bgColor, setBgColor] = useState('#0a0a23')
   const [currentData, setCurrentData] = useState({})
   const [isLoading, setIsLoading] = useState(true)
 
@@ -37,6 +38,12 @@ function App () {
   //Handlers - To be moved
   const handleTrialsChange = e => {
     setNumTrials(e.target.value)
+  }
+
+  const handleBackgroundColorChange = e => {
+    const color = e.target.value
+    setBgColor(color)
+    document.body.style = `background: ${color};`
   }
 
   //Run Sim Functions
@@ -183,7 +190,7 @@ function App () {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
       {!initialLoadRef.current && (
         <div>
@@ -222,7 +229,7 @@ function App () {
               id='settings-buttons-container'
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'right',
                 alignItems: 'center',
                 marginTop: '1rem'
               }}
@@ -250,6 +257,13 @@ function App () {
                 onChange={handleTrialsChange}
                 type='number'
                 value={numTrials}
+              />
+              <input
+                id='bg-color-pick-input'
+                type='color'
+                className='color-picker'
+                onChange={handleBackgroundColorChange}
+                value={bgColor}
               />
             </div>
           </div>
