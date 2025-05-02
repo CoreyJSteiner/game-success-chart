@@ -4,6 +4,7 @@ import LineConfigDisplay from './components/LineConfigDisplay'
 import ChartDisplay from './components/ChartDisplay'
 import ButtonMain from './components/ButtonMain'
 import { getRandomColor, rollDie } from './utils'
+import LoadingOverlay from './components/LoadingOverlay'
 
 function App () {
   const {
@@ -14,8 +15,9 @@ function App () {
     removeConfig
   } = useLineConfigs()
   const [yAxisLocked, setYAxisLocked] = useState(true)
-  const [numTrials, setNumTrials] = useState(50000)
+  const [numTrials, setNumTrials] = useState(10)
   const [currentData, setCurrentData] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   //Initial Load
   const initialLoadRef = useRef(true)
@@ -26,18 +28,20 @@ function App () {
 
   useEffect(() => {
     if (initialLoadRef.current && lineConfigs.length > 0) {
-      initialLoadRef.current = false
       runSimulation()
+      initialLoadRef.current = false
+      setNumTrials(50000)
     }
   }, [lineConfigs])
 
   //Handlers - To be moved
-  const handleTrialsChange = num => {
-    setNumTrials(num)
+  const handleTrialsChange = e => {
+    setNumTrials(e.target.value)
   }
 
   //Run Sim Functions
   const runSimulation = async () => {
+    setIsLoading(true)
     try {
       const configs = lineConfigs
       if (configs.length === 0) return alert('Add at least one configuration!')
@@ -83,6 +87,7 @@ function App () {
         datasets: datasets
       })
     } finally {
+      setIsLoading(false)
     }
   }
 
@@ -179,48 +184,55 @@ function App () {
 
   return (
     <div>
-      <ChartDisplay
-        currentData={currentData}
-        isLoading={false}
-        yAxisLocked={yAxisLocked}
-      />
-      <div style={{ padding: '20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <ButtonMain label='Add Configuration' handleClick={addConfig} />
-          </div>
-          <div>
-            <ButtonMain label='Run Simulation' handleClick={runSimulation} />
-          </div>
-        </div>
+      <LoadingOverlay loading={isLoading} />
+      {!initialLoadRef.current && (
+        <div>
+          {' '}
+          <ChartDisplay
+            currentData={currentData}
+            isLoading={false}
+            yAxisLocked={yAxisLocked}
+          />
+          <div style={{ padding: '20px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
+                <ButtonMain label='Add Configuration' handleClick={addConfig} />
+              </div>
+              <div>
+                <ButtonMain
+                  label='Run Simulation'
+                  handleClick={runSimulation}
+                />
+              </div>
+            </div>
 
-        <div id='configurations-container'>
-          {lineConfigs.map(config => (
-            <LineConfigDisplay
-              key={config.id}
-              lineConfig={config}
-              onUpdate={updated => updateConfig(config.id, updated)}
-              onRemove={() => removeConfig(config.id)}
-              onDuplicate={() => duplicateConfig(config.id)}
-            />
-          ))}
-        </div>
+            <div id='configurations-container'>
+              {lineConfigs.map(config => (
+                <LineConfigDisplay
+                  key={config.id}
+                  lineConfig={config}
+                  onUpdate={updated => updateConfig(config.id, updated)}
+                  onRemove={() => removeConfig(config.id)}
+                  onDuplicate={() => duplicateConfig(config.id)}
+                />
+              ))}
+            </div>
 
-        <div
-          id='settings-buttons-container'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '1rem'
-          }}
-        >
-          <div style={{ display: 'flex', gap: '10px' }}>
-            {/* <ButtonMain
+            <div
+              id='settings-buttons-container'
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginTop: '1rem'
+              }}
+            >
+              <div style={{ display: 'flex', gap: '10px' }}>
+                {/* <ButtonMain
               label='Toggle Y-Axis Lock (0-100%)'
               handleClick={() => setYAxisLocked(!yAxisLocked)}
             /> */}
-            {/* <button onClick={() => console.log('exportToCSV()')}>
+                {/* <button onClick={() => console.log('exportToCSV()')}>
               Export to CSV
             </button>
             <button onClick={() => console.log('importFromCSV()')}>
@@ -232,15 +244,17 @@ function App () {
             <button onClick={() => console.log('importFromJSON()')}>
               Import JSON
             </button> */}
+              </div>
+              <input
+                id='num-trials-input'
+                onChange={handleTrialsChange}
+                type='number'
+                value={numTrials}
+              />
+            </div>
           </div>
-          <input
-            id='num-trials-input'
-            onChange={handleTrialsChange}
-            type='number'
-            value={numTrials}
-          />
         </div>
-      </div>
+      )}
     </div>
   )
 }

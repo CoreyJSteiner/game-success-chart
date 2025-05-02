@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import Chart from 'chart.js/auto'
 
-const ChartDisplay = ({ currentData, isLoading, yAxisLocked }) => {
+const ChartDisplay = ({ currentData, yAxisLocked }) => {
   const chartRef = useRef(null)
   const { labels, datasets } = currentData
   const allKeys = labels
