@@ -14,7 +14,7 @@ const JsonImportButton = ({ replaceConfigs, importRunSim }) => {
       if (!file) return
 
       const text = await file.text()
-      const configs = JSON.parse(text)
+      const configs = JSON.parse(text).configs
 
       replaceConfigs(configs)
       importRunSim(configs)

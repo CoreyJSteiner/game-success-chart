@@ -2,6 +2,7 @@ import { saveAs } from 'file-saver'
 
 const useJsonExport = () => {
   const exportToJSON = configs => {
+    console.dir(configs, { depth: null })
     try {
       if (configs.length === 0) return alert('No configurations to export!')
 

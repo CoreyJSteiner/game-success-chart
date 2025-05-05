@@ -107,7 +107,12 @@ function App () {
             <button onClick={() => console.log('importFromCSV()')}>
               Import from CSV
             </button> */}
-                <button onClick={() => exportToJSON(lineConfigs)}>
+                <button
+                  onClick={() => {
+                    console.dir(currentData, { depth: null })
+                    exportToJSON(currentData)
+                  }}
+                >
                   Export JSON
                 </button>
                 <JsonImportButton
