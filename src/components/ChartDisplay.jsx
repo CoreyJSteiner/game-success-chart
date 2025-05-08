@@ -55,7 +55,7 @@ const ChartDisplay = ({ currentData }) => {
                 size: 12
               },
               stepSize: 0.1,
-              callback: value => `${(value * 100).toFixed(1)}%`
+              callback: value => `${(value * 100).toFixed(0)}%`
             },
             grid: {
               color: 'rgba(255,255,255,0.1)'
@@ -112,7 +112,7 @@ const ChartDisplay = ({ currentData }) => {
             callbacks: {
               label: context =>
                 `${context.dataset.label}: ${(context.parsed.y * 100).toFixed(
-                  1
+                  0
                 )}%`
             }
           }
