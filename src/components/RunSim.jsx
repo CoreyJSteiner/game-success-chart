@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { rollDie } from '../utils'
+const DECIMAL_PLACE = 2
 
 const useRunSim = () => {
   const [currentData, setCurrentData] = useState({})
@@ -138,7 +139,7 @@ const useRunSim = () => {
         } else {
           const output = {}
           Object.keys(results).forEach(key => {
-            output[key] = results[key] / trials
+            output[key] = (results[key] / trials).toFixed(DECIMAL_PLACE)
           })
           resolve(output)
         }
