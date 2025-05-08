@@ -1,12 +1,11 @@
 import { saveAs } from 'file-saver'
 
 const useJsonExport = () => {
-  const exportToJSON = configs => {
-    console.dir(configs, { depth: null })
+  const exportToJSON = data => {
     try {
-      if (configs.length === 0) return alert('No configurations to export!')
+      if (data.length === 0) return alert('No data to export!')
 
-      const jsonData = JSON.stringify(configs, null, 2)
+      const jsonData = JSON.stringify(data, null, 2)
 
       const blob = new Blob([jsonData], { type: 'application/json' })
       saveAs(blob, 'probs_' + Date.now())

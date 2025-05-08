@@ -110,13 +110,11 @@ function App () {
 
           <div id='settings-buttons-container'>
             <div id='config-control-container'>
-              <button
-                onClick={() => {
-                  console.dir(currentData, { depth: null })
-                  exportToJSON(currentData)
-                }}
-              >
-                Export JSON
+              <button onClick={() => exportToJSON({ configs: lineConfigs })}>
+                Export Config JSON
+              </button>
+              <button onClick={() => exportToJSON(currentData)}>
+                Export Result JSON
               </button>
               <JsonImportButton importJson={importJson} />
               <ButtonMain label='Clear Configs' handleClick={clearConfigs} />
