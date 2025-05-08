@@ -3,7 +3,7 @@ import { rollDie } from '../utils'
 
 const useRunSim = () => {
   const [currentData, setCurrentData] = useState({})
-  const [numTrials, setNumTrials] = useState(10)
+  const [numTrials, setNumTrials] = useState(10000)
 
   const runSimulation = async (loadingFunction, lineConfigs) => {
     loadingFunction(true)

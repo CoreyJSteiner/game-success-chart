@@ -1,0 +1,1392 @@
+{
+  "configs": [
+    {
+      "name": "1d10",
+      "lineColor": "#ff2600",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 0,
+      "id": "73061adb-ec53-4616-9a6e-5f3a073758c8",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d12",
+      "lineColor": "#ff9380",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 1,
+      "id": "571d1edb-eb69-47fc-98ed-57fba176edb1",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d10C",
+      "lineColor": "#ff9380",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 1,
+      "d12": 0,
+      "id": "bebc3658-d25a-4f0b-9655-24274295a2c0",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d12C",
+      "lineColor": "#ff9380",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 0,
+      "d12": 1,
+      "id": "c2996128-c91f-4ed0-ac8a-b633c73c6a7d",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d10CC",
+      "lineColor": "#ff9380",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 1,
+      "d12": 0,
+      "id": "5b3a549e-de05-4bf2-ba3d-e2f40d484113",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d12CC",
+      "lineColor": "#ff2600",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 0,
+      "d12": 1,
+      "id": "3a49f31a-7b7b-4275-b8b2-0e3e0f30243b",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d10",
+      "lineColor": "#ff9300",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 0,
+      "id": "a3cf8ebc-293d-4fc8-9221-65a1ca9f2194",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d10",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 1,
+      "id": "926fbe52-2456-4c51-8ee9-8480ded4e29a",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d10",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 2,
+      "id": "bbcd9a5d-f58e-41cd-8cea-abc33e545dbb",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "2d10C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 2,
+      "d12": 0,
+      "id": "2e1dd74c-49d7-4eac-b4a2-b48f0a099277",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d101d12C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 1,
+      "d12": 1,
+      "id": "4ef783ce-6fc3-4140-8303-24eab06d2806",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d12C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 0,
+      "d12": 2,
+      "id": "1d76d854-1c85-4ea3-b25c-6eeb29d5c1c1",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "2d10CC",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 2,
+      "d12": 0,
+      "id": "a37a93a5-bc19-494f-a3d0-e2a7ca843ff4",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d101d12CC",
+      "lineColor": "#ffc87d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 1,
+      "d12": 1,
+      "id": "6c74a4d7-55a3-49c6-9e65-81914371240e",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "2d12CC",
+      "lineColor": "#ff9300",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 0,
+      "d12": 2,
+      "id": "1c2806d9-64ab-48d8-8378-ae02be3c81dc",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "3d10",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 0,
+      "id": "993c929a-a8a5-4143-aaa8-05497c4d14eb",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "2d101d12",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 1,
+      "id": "d624f5a2-cbd4-48f6-9bdf-826335c71683",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "1d102d12",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 2,
+      "id": "d2f604bf-7664-4544-a0a1-2f3a1d1d03f4",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d12",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 3,
+      "id": "a86037ea-fee2-4a27-9723-1ceb0d47ebaa",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d10C",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 3,
+      "d12": 0,
+      "id": "9d47b3f2-5834-42a0-854f-ee9f56fbc840",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "2d101d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 2,
+      "d12": 1,
+      "id": "53561bdc-5e8f-4b6c-9f61-90769e54f48f",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "1d102d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 1,
+      "d12": 2,
+      "id": "597b14a0-dd8b-4d20-b53c-704c85a963d0",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 0,
+      "d12": 3,
+      "id": "b579fc69-1339-4db5-9876-dcabdae021b8",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d10CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 3,
+      "d12": 0,
+      "id": "8cd7ba34-1752-46f7-b9b2-2ca0a03ebbff",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "2d101d12CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 2,
+      "d12": 1,
+      "id": "b4091c0a-6b1c-48ff-9cbb-a940401f1703",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "1d102d12CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 1,
+      "d12": 2,
+      "id": "8aa78921-a5d5-465c-8593-952509f5fc0b",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d12CC",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 0,
+      "d12": 3,
+      "id": "3a0ba077-9e24-47ed-ba56-41b739ad4de7",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "4d10",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 4,
+      "d12": 0,
+      "id": "0338b609-a736-4f59-a322-682ed7fe18a3",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "3d101d12",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 1,
+      "id": "8b1b9b61-e387-4b63-af0e-dddfc175dd60",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "2d102d12",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 2,
+      "id": "c4f77f47-3b9a-4717-96ed-c049c021714d",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "1d103d12",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 3,
+      "id": "338cca11-21a3-4c10-a33c-c3f8ba9ec449",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d12",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 4,
+      "id": "b15512e3-0a79-4da4-b581-a5c171f198b1",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d10C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 4,
+      "d12": 0,
+      "id": "6f0d7e08-a0b0-40af-bfc0-9a68e6cbdeff",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "3d101d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 3,
+      "d12": 1,
+      "id": "337f128a-d633-4819-b4db-1ca3b40268ac",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "2d102d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 2,
+      "d12": 2,
+      "id": "86e55b6e-4e73-4bac-a6b5-6c9b5e1c6add",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 1,
+      "d12": 3,
+      "id": "2c87d613-c17e-4f94-aa4b-014c28e9f141",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 0,
+      "d12": 4,
+      "id": "7591efa2-bbf8-49df-80f5-948060deea3a",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d10C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 4,
+      "d12": 0,
+      "id": "4eaab068-781b-4331-9268-94d41f40cf98",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "3d101d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 3,
+      "d12": 1,
+      "id": "fb3edea6-f71c-4bed-9093-7813dd55e778",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "2d102d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 2,
+      "d12": 2,
+      "id": "d73b4919-e473-464b-b438-23c942e3c60b",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 1,
+      "d12": 3,
+      "id": "de1c36b2-5cf4-481b-8352-f16494a8ff1e",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d12C",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 0,
+      "d12": 4,
+      "id": "88ae9358-6cee-4a68-9ee3-8b47accbee99",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "5d10",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 5,
+      "d12": 0,
+      "id": "b7f1e9b2-05ef-4aad-8648-a235049e4fb2",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "4d101d12",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 4,
+      "d12": 1,
+      "id": "f06b8e7d-addc-45dd-a34a-3ee57ee1e9d7",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "3d102d12",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 2,
+      "id": "8e8c87a2-85eb-4aed-a0b1-c1d406ed9bf3",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d103d12",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 3,
+      "id": "abc7842f-ace5-48b6-8715-f87a6fc2ece0",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d104d12",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 4,
+      "id": "c5c8e206-4c4c-46a2-a1f0-cfac0d1d5355",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d12",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 5,
+      "id": "9afb7052-7551-4aed-b69e-ac9b2ece66df",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d10C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 5,
+      "d12": 0,
+      "id": "09e292cb-2f4f-44e2-97a0-40386d9ce3f3",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "4d101d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 4,
+      "d12": 1,
+      "id": "b7b39e54-af80-485c-a4e5-1591d1e24d86",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "3d102d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 3,
+      "d12": 2,
+      "id": "1c4cef71-8328-447e-abba-58d35f408c9b",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 2,
+      "d12": 3,
+      "id": "f524bf0a-2500-4c1d-9c57-bb13b96e5ad9",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d104d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 1,
+      "d12": 4,
+      "id": "191c8030-5c2c-4810-9d3a-384e4f8a5eec",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 1,
+      "d10": 0,
+      "d12": 5,
+      "id": "5238e012-5816-4b0e-86ec-9bf9cc1dbc82",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d10CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 5,
+      "d12": 0,
+      "id": "8020e254-1c29-4ebc-8dc3-93cfbd894121",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "4d101d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 4,
+      "d12": 1,
+      "id": "c6327434-f8d6-4722-8eed-36665958ee86",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "3d102d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 3,
+      "d12": 2,
+      "id": "80e28c4f-1bc7-4ddc-84e1-9bccc15206de",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d103d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 2,
+      "d12": 3,
+      "id": "77614a53-0a6d-442e-b09a-72d26919f0bf",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d104d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 1,
+      "d12": 4,
+      "id": "0e2d7250-b807-45f1-9a1d-d68b07e29b97",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d12CC",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 2,
+      "d10": 0,
+      "d12": 5,
+      "id": "e8b42000-3904-41f3-9e9a-9b78cfe9658c",
+      "group": "Dice Level 5"
+    }
+  ],
+  "labels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "datasets": [
+    {
+      "label": "1d10",
+      "data": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "borderColor": "#ff2600",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d12",
+      "data": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "borderColor": "#ff9380",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d10C",
+      "data": [
+        0.90066,
+        0.09934,
+        0,
+        0
+      ],
+      "borderColor": "#ff9380",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d12C",
+      "data": [
+        0.91508,
+        0.08492,
+        0,
+        0
+      ],
+      "borderColor": "#ff9380",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d10CC",
+      "data": [
+        0.72484,
+        0.27516,
+        0,
+        0
+      ],
+      "borderColor": "#ff9380",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d12CC",
+      "data": [
+        0.76936,
+        0.23064,
+        0,
+        0
+      ],
+      "borderColor": "#ff2600",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 1"
+    },
+    {
+      "label": "1d10",
+      "data": [
+        0.91068,
+        0.08932,
+        0,
+        0
+      ],
+      "borderColor": "#ff9300",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "1d10",
+      "data": [
+        0.9231,
+        0.0769,
+        0,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "1d10",
+      "data": [
+        0.93732,
+        0.06268,
+        0,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "2d10C",
+      "data": [
+        0.68074,
+        0.31926,
+        0,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "1d101d12C",
+      "data": [
+        0.71102,
+        0.28898,
+        0,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "1d12C",
+      "data": [
+        0.74826,
+        0.25174,
+        0,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "2d10CC",
+      "data": [
+        0.39006,
+        0.59248,
+        0.01746,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "1d101d12CC",
+      "data": [
+        0.4464,
+        0.53862,
+        0.01498,
+        0
+      ],
+      "borderColor": "#ffc87d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "2d12CC",
+      "data": [
+        0.49988,
+        0.48748,
+        0.01264,
+        0
+      ],
+      "borderColor": "#ff9300",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 2"
+    },
+    {
+      "label": "3d10",
+      "data": [
+        0.72092,
+        0.27908,
+        0,
+        0
+      ],
+      "borderColor": "#fffb00",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "2d101d12",
+      "data": [
+        0.7494,
+        0.2506,
+        0,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "1d102d12",
+      "data": [
+        0.78128,
+        0.21872,
+        0,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "3d12",
+      "data": [
+        0.8054,
+        0.1946,
+        0,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "3d10C",
+      "data": [
+        0.40796,
+        0.56884,
+        0.0232,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "2d101d12C",
+      "data": [
+        0.44678,
+        0.5334,
+        0.01982,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "1d102d12C",
+      "data": [
+        0.49124,
+        0.49198,
+        0.01678,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "3d12C",
+      "data": [
+        0.53608,
+        0.4504,
+        0.01352,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "3d10CC",
+      "data": [
+        0.171,
+        0.70306,
+        0.12594,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "2d101d12CC",
+      "data": [
+        0.20962,
+        0.68274,
+        0.10764,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "1d102d12CC",
+      "data": [
+        0.24432,
+        0.663,
+        0.09268,
+        0
+      ],
+      "borderColor": "#fffd80",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "3d12CC",
+      "data": [
+        0.28698,
+        0.63276,
+        0.08026,
+        0
+      ],
+      "borderColor": "#fffb00",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 3"
+    },
+    {
+      "label": "4d10",
+      "data": [
+        0.48286,
+        0.4957,
+        0.02144,
+        0
+      ],
+      "borderColor": "#00f900",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "3d101d12",
+      "data": [
+        0.5234,
+        0.45782,
+        0.01878,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "2d102d12",
+      "data": [
+        0.56008,
+        0.42426,
+        0.01566,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "1d103d12",
+      "data": [
+        0.60032,
+        0.3877,
+        0.01198,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "4d12",
+      "data": [
+        0.6328,
+        0.35688,
+        0.01032,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "4d10C",
+      "data": [
+        0.2071,
+        0.661,
+        0.1319,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "3d101d12C",
+      "data": [
+        0.24228,
+        0.64522,
+        0.1125,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "2d102d12C",
+      "data": [
+        0.27534,
+        0.62774,
+        0.09692,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "1d103d12C",
+      "data": [
+        0.3119,
+        0.60456,
+        0.08354,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "4d12C",
+      "data": [
+        0.34944,
+        0.58056,
+        0.07,
+        0
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "4d10C",
+      "data": [
+        0.07246,
+        0.56648,
+        0.35286,
+        0.0082
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "3d101d12C",
+      "data": [
+        0.09168,
+        0.58892,
+        0.31378,
+        0.00562
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "2d102d12C",
+      "data": [
+        0.10978,
+        0.60438,
+        0.28108,
+        0.00476
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "1d103d12C",
+      "data": [
+        0.1307,
+        0.61622,
+        0.24822,
+        0.00486
+      ],
+      "borderColor": "#7df97d",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "4d12C",
+      "data": [
+        0.15882,
+        0.618,
+        0.21968,
+        0.0035
+      ],
+      "borderColor": "#00f900",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 4"
+    },
+    {
+      "label": "5d10",
+      "data": [
+        0.28818,
+        0.59816,
+        0.11366,
+        0
+      ],
+      "borderColor": "#0433ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "4d101d12",
+      "data": [
+        0.32152,
+        0.58124,
+        0.09724,
+        0
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "3d102d12",
+      "data": [
+        0.35396,
+        0.56432,
+        0.08172,
+        0
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d103d12",
+      "data": [
+        0.38992,
+        0.5408,
+        0.06928,
+        0
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d104d12",
+      "data": [
+        0.4265,
+        0.51378,
+        0.05972,
+        0
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "5d12",
+      "data": [
+        0.45974,
+        0.48744,
+        0.05282,
+        0
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "5d10C",
+      "data": [
+        0.1021,
+        0.56024,
+        0.32804,
+        0.00962
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "4d101d12C",
+      "data": [
+        0.1193,
+        0.5785,
+        0.29506,
+        0.00714
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "3d102d12C",
+      "data": [
+        0.14062,
+        0.59134,
+        0.26212,
+        0.00592
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d103d12C",
+      "data": [
+        0.16378,
+        0.59636,
+        0.23526,
+        0.0046
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d104d12C",
+      "data": [
+        0.18454,
+        0.6006,
+        0.21078,
+        0.00408
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "5d12C",
+      "data": [
+        0.2135,
+        0.59586,
+        0.1875,
+        0.00314
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "5d10CC",
+      "data": [
+        0.02974,
+        0.36268,
+        0.54334,
+        0.06424
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "4d101d12CC",
+      "data": [
+        0.03582,
+        0.39744,
+        0.51344,
+        0.0533
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "3d102d12CC",
+      "data": [
+        0.04462,
+        0.42318,
+        0.48692,
+        0.04528
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d103d12CC",
+      "data": [
+        0.05564,
+        0.46094,
+        0.44334,
+        0.04008
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "1d104d12CC",
+      "data": [
+        0.07032,
+        0.48634,
+        0.4097,
+        0.03364
+      ],
+      "borderColor": "#8097ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    },
+    {
+      "label": "5d12CC",
+      "data": [
+        0.08284,
+        0.50842,
+        0.38018,
+        0.02856
+      ],
+      "borderColor": "#0433ff",
+      "borderDash": [],
+      "tension": 0.1,
+      "group": "Dice Level 5"
+    }
+  ]
+}

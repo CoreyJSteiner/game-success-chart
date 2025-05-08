@@ -4,10 +4,10 @@ import useRunSim from './components/RunSim'
 import LineConfigDisplay from './components/LineConfigDisplay'
 import ChartDisplay from './components/ChartDisplay'
 import ButtonMain from './components/ButtonMain'
-import { getRandomColor, rollDie } from './utils'
 import LoadingOverlay from './components/LoadingOverlay'
 import useJsonExport from './components/JsonExport'
 import JsonImportButton from './components/JsonImport'
+import jsonAllConfigsDefault from '../exports/all_withGroups.json'
 
 function App () {
   const {
@@ -24,22 +24,44 @@ function App () {
   const [yAxisLocked] = useState(true)
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
-  const [showInputs, setShowInputs] = useState(true)
+  const [showInputs, setShowInputs] = useState(false)
 
   //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
 
   useEffect(() => {
-    addConfig({ name: '1d12+1d4', d12: 1, d4: 1, lineColor: '#7DF9FF' })
+    // addConfig({ name: '1d12+1d4', d12: 1, d4: 1, lineColor: '#7DF9FF' })
+    runConfigs(jsonAllConfigsDefault.configs)
   }, [])
 
   useEffect(() => {
     if (initialLoadRef.current && lineConfigs.length > 0) {
       runSimulation(setIsLoading, lineConfigs)
       initialLoadRef.current = false
-      setNumTrials(50000)
     }
   }, [lineConfigs])
+
+  const importJson = async jsonFile => {
+    try {
+      if (!jsonFile) return
+
+      const text = await jsonFile.text()
+      const configs = JSON.parse(text).configs
+
+      runConfigs(configs)
+    } catch (error) {
+      alert('Invalid JSON file: ' + error.message)
+    }
+  }
+
+  const runConfigs = async configs => {
+    replaceConfigs(configs)
+    try {
+      runSimulation(setIsLoading, configs)
+    } finally {
+      setShowInputs(false)
+    }
+  }
 
   //Handlers - To be moved
   const handleTrialsChange = e => {
@@ -96,13 +118,7 @@ function App () {
               >
                 Export JSON
               </button>
-              <JsonImportButton
-                replaceConfigs={replaceConfigs}
-                importRunSim={internalConfig =>
-                  runSimulation(setIsLoading, internalConfig)
-                }
-                showInputs={setShowInputs}
-              />
+              <JsonImportButton importJson={importJson} />
               <ButtonMain label='Clear Configs' handleClick={clearConfigs} />
             </div>
             <div>
