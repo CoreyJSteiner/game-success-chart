@@ -25,7 +25,7 @@ function App () {
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
 
-  //Initial Load
+  //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function App () {
   }
 
   return (
-    <div style={{ backgroundColor: { bgColor } }}>
+    <div id='page-container' style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
       {!initialLoadRef.current && (
         <div>
@@ -62,8 +62,8 @@ function App () {
             isLoading={false}
             yAxisLocked={yAxisLocked}
           />
-          <div style={{ padding: '20px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div id='input-container'>
+            <div id='top-button-container'>
               <div>
                 <ButtonMain label='Add Configuration' handleClick={addConfig} />
               </div>
@@ -87,26 +87,8 @@ function App () {
               ))}
             </div>
 
-            <div
-              id='settings-buttons-container'
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop: '1rem'
-              }}
-            >
-              <div style={{ display: 'flex', gap: '10px' }}>
-                {/* <ButtonMain
-              label='Toggle Y-Axis Lock (0-100%)'
-              handleClick={() => setYAxisLocked(!yAxisLocked)}
-            /> */}
-                {/* <button onClick={() => console.log('exportToCSV()')}>
-              Export to CSV
-            </button>
-            <button onClick={() => console.log('importFromCSV()')}>
-              Import from CSV
-            </button> */}
+            <div id='settings-buttons-container'>
+              <div id='config-control-container'>
                 <button
                   onClick={() => {
                     console.dir(currentData, { depth: null })

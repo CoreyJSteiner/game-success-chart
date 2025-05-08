@@ -103,10 +103,7 @@ const ChartDisplay = ({ currentData, yAxisLocked }) => {
   }, [datasets])
 
   return (
-    <div
-      className='chart-container'
-      style={{ maxWidth: '80%', marginLeft: 'auto', marginRight: 'auto' }}
-    >
+    <div id='chart-container'>
       <canvas ref={chartRef} />
     </div>
   )

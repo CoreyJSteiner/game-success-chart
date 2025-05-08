@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Generic */
 button {
     display: inline-flex;
     padding-left: .5;
@@ -19,66 +20,27 @@ button {
     border-radius: 10px;
 }
 
+.color-picker {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    vertical-align: middle;
+}
+
 #num-trials-input {
     text-align: right;
     width: 120px;
 }
 
-.line-style {
-    height: 30px;
-    padding: 0 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: white;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
-.loading-overlay {
-    position: fixed;
-    display: flex;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 20%;
-    border-radius: 2rem;
-    background: rgba(209, 209, 209, 1);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 9999;
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-.die-input-cont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.num-input-cont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.dice-inputs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border: none;
-}
-
+/* Number Input */
 .number-input {
     display: inline-flex;
     align-items: center;
@@ -112,6 +74,48 @@ button {
     margin: 0;
 }
 
+/* Configs */
+#config-name {
+    margin-right: 10px;
+    width: 150px;
+}
+
+#line-style {
+    height: 30px;
+    padding: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: white;
+    margin-left: 10px;
+}
+
+
+/* Loader */
+#loading-overlay {
+    position: fixed;
+    display: flex;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 20%;
+    border-radius: 2rem;
+    background: rgba(209, 209, 209, 1);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+}
+
+#spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -122,34 +126,56 @@ button {
     }
 }
 
-/* Add disabled state styling */
 .disabled {
     opacity: 0.6;
     pointer-events: none;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+/* Containers */
+#chart-container {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.line-style {
-    margin-left: 10px;
+#top-button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-.button-die-config>button {
+#input-container {
+    padding: 20px;
+}
+
+#num-input-cont {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.config-name {
-    margin-right: 10px;
-    width: 150px;
+
+#dice-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: none;
 }
 
+#settings-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#config-control-container {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Config Input */
 .config-box {
     border: 1px solid #ccc;
     padding: 15px;
@@ -162,7 +188,7 @@ button {
     /* Prevent shrinking/growing */
 }
 
-.config-controls {
+#config-controls {
     display: flex;
     gap: 5px;
     margin-right: 10px;
@@ -178,11 +204,6 @@ button {
     /* For Firefox */
 }
 
-/* Scrollbar styling for Chrome/Edge/Safari */
-#configurations-container::-webkit-scrollbar {
-    height: 8px;
-}
-
 #configurations-container::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
@@ -192,17 +213,15 @@ button {
     border-radius: 4px;
 }
 
-.color-picker {
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    vertical-align: middle;
-}
-
-.config-header {
+#config-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
     gap: 10px;
+}
+
+#button-die-config>button {
+    display: flex;
+    flex-direction: column;
 }

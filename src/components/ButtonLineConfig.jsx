@@ -4,7 +4,7 @@ const ButtonLineConfig = ({ label, iconName, handleClick }) => {
   // }
 
   return (
-    <div className='button-die-config'>
+    <div id='button-die-config'>
       <button onClick={handleClick}>
         {label && label}
         {iconName && (

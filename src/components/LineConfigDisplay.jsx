@@ -8,8 +8,8 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
 
   return (
     <div className='config-box' id={lineConfig.id}>
-      <div className='config-header'>
-        <div className='config-controls'>
+      <div id='config-header'>
+        <div id='config-controls'>
           {/* <ButtonLineConfig iconName='arrow_left' /> */}
           {/* <ButtonLineConfig iconName='arrow_right' /> */}
           <ButtonLineConfig
@@ -20,7 +20,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
         <div>
           <input
             type='text'
-            className='config-name'
+            id='config-name'
             onChange={e => handleChange('name', e.target.value)}
             value={lineConfig.name}
             placeholder='Configuration name'
@@ -32,7 +32,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
             value={lineConfig.lineColor}
           />
           <select
-            className='line-style'
+            id='line-style'
             onChange={e => handleChange('lineStyle', e.target.value)}
             value={lineConfig.lineStyle}
           >
@@ -47,7 +47,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
           handleClick={e => onRemove(e.target.id)}
         />
       </div>
-      <div className='dice-inputs'>
+      <div id='dice-inputs'>
         <InputNum
           label={'D4'}
           onChange={val => handleChange('d4', val)}

@@ -11,7 +11,6 @@ const useRunSim = () => {
       const configs = lineConfigs
       if (configs.length === 0) return alert('Add at least one configuration!')
 
-      // Run simulations in parallel with progress
       const results = await Promise.all(
         configs.map(async config => ({
           ...config,

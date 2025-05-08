@@ -5,7 +5,7 @@ const InputNum = ({ label, value = 0, onChange, min = 0, max = 5 }) => {
   }
 
   return (
-    <div className='num-input-cont'>
+    <div id='num-input-cont'>
       {label && label}
       <div className='number-input'>
         <button onClick={() => handleChange(value - 1)}>-</button>
