@@ -61,17 +61,17 @@ const useRunSim = () => {
     dice.push(
       ...Array(config.d4)
         .fill()
-        .map(() => ({ value: rollDie(4) }))
+        .map(() => ({ type: 'd4', value: rollDie(4) }))
     )
     dice.push(
       ...Array(config.d10)
         .fill()
-        .map(() => ({ value: rollDie(10) }))
+        .map(() => ({ type: 'd10', value: rollDie(10) }))
     )
     dice.push(
       ...Array(config.d12)
         .fill()
-        .map(() => ({ value: rollDie(12) }))
+        .map(() => ({ type: 'd12', value: rollDie(12) }))
     )
 
     const initialSuccesses = dice.filter(
@@ -80,12 +80,10 @@ const useRunSim = () => {
         (d.type === 'd12' && d.value >= 10)
     ).length
 
-    const remainingValues = dice
-      .filter(d => d.value < 10 || (d.value === 10 && d.type === 'd12'))
-      .map(d => d.value)
+    const remainingValues = dice.filter(d => d.value < 10).map(d => d.value)
 
     let summedSuccesses = 0
-    const sortedValues = [...remainingValues].sort((a, b) => b - a)
+    const sortedValues = remainingValues.sort((a, b) => b - a)
 
     while (sortedValues.length > 0) {
       const current = sortedValues.shift()
@@ -100,7 +98,7 @@ const useRunSim = () => {
 
       let sum = 0
       const usedIndices = []
-      for (let i = 0; i < sortedValues.length; i++) {
+      for (let i = sortedValues.length - 1; i >= 0; i--) {
         if (sum + sortedValues[i] <= target) {
           sum += sortedValues[i]
           usedIndices.push(i)
