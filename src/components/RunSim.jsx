@@ -74,8 +74,10 @@ const useRunSim = () => {
         .map(() => ({ value: rollDie(12) }))
     )
 
-    let initialSuccesses = dice.filter(
-      d => d.value === 10 || d.value >= 10
+    const initialSuccesses = dice.filter(
+      d =>
+        (d.type === 'd10' && d.value === 10) ||
+        (d.type === 'd12' && d.value >= 10)
     ).length
 
     const remainingValues = dice
