@@ -10,8 +10,6 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
     <div className='config' id={lineConfig.id}>
       <div id='config-header'>
         <div id='config-controls'>
-          {/* <ButtonLineConfig iconName='arrow_left' /> */}
-          {/* <ButtonLineConfig iconName='arrow_right' /> */}
           <ButtonLineConfig
             iconName='content_copy'
             handleClick={e => onDuplicate(e.target.id)}

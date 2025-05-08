@@ -12,7 +12,7 @@ const useLineConfigs = () => {
       d4: input.d4 || 0,
       d10: input.d10 || 0,
       d12: input.d12 || 0,
-      group: ''
+      group: 'Group 1'
     }
     setLineConfigs([...lineConfigs, { ...config, id: crypto.randomUUID() }])
   }

@@ -24,6 +24,7 @@ function App () {
   const [yAxisLocked] = useState(true)
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
+  const [showInputs, setShowInputs] = useState(true)
 
   //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
@@ -51,77 +52,92 @@ function App () {
     document.body.style = `background: ${color};`
   }
 
+  const handleRunSimClick = () => {
+    setShowInputs(false)
+    return runSimulation(setIsLoading, lineConfigs)
+  }
+
   return (
     <div id='page-container' style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
+      {showInputs && (
+        <div id='input-container'>
+          <div id='top-button-container'>
+            <div>
+              <ButtonMain label='Add Configuration' handleClick={addConfig} />
+            </div>
+            <div>
+              <ButtonMain
+                label='Run Simulation'
+                handleClick={handleRunSimClick}
+              />
+            </div>
+          </div>
+
+          <div id='configurations-container'>
+            {lineConfigs.map(config => (
+              <LineConfigDisplay
+                key={config.id}
+                lineConfig={config}
+                onUpdate={updated => updateConfig(config.id, updated)}
+                onRemove={() => removeConfig(config.id)}
+                onDuplicate={() => duplicateConfig(config.id)}
+              />
+            ))}
+          </div>
+
+          <div id='settings-buttons-container'>
+            <div id='config-control-container'>
+              <button
+                onClick={() => {
+                  console.dir(currentData, { depth: null })
+                  exportToJSON(currentData)
+                }}
+              >
+                Export JSON
+              </button>
+              <JsonImportButton
+                replaceConfigs={replaceConfigs}
+                importRunSim={internalConfig =>
+                  runSimulation(setIsLoading, internalConfig)
+                }
+                showInputs={setShowInputs}
+              />
+              <ButtonMain label='Clear Configs' handleClick={clearConfigs} />
+            </div>
+            <div>
+              <input
+                id='num-trials-input'
+                onChange={handleTrialsChange}
+                type='number'
+                value={numTrials}
+              />
+              <input
+                id='bg-color-pick-input'
+                type='color'
+                className='color-picker'
+                onChange={handleBackgroundColorChange}
+                value={bgColor}
+              />
+            </div>
+          </div>
+        </div>
+      )}
       {!initialLoadRef.current && (
-        <div>
-          {' '}
+        <div id='main-container'>
           <ChartDisplay
             currentData={currentData}
             isLoading={false}
             yAxisLocked={yAxisLocked}
           />
-          <div id='input-container'>
-            <div id='top-button-container'>
-              <div>
-                <ButtonMain label='Add Configuration' handleClick={addConfig} />
-              </div>
-              <div>
-                <ButtonMain
-                  label='Run Simulation'
-                  handleClick={() => runSimulation(setIsLoading, lineConfigs)}
-                />
-              </div>
-            </div>
-
-            <div id='configurations-container'>
-              {lineConfigs.map(config => (
-                <LineConfigDisplay
-                  key={config.id}
-                  lineConfig={config}
-                  onUpdate={updated => updateConfig(config.id, updated)}
-                  onRemove={() => removeConfig(config.id)}
-                  onDuplicate={() => duplicateConfig(config.id)}
-                />
-              ))}
-            </div>
-
-            <div id='settings-buttons-container'>
-              <div id='config-control-container'>
-                <button
-                  onClick={() => {
-                    console.dir(currentData, { depth: null })
-                    exportToJSON(currentData)
-                  }}
-                >
-                  Export JSON
-                </button>
-                <JsonImportButton
-                  replaceConfigs={replaceConfigs}
-                  importRunSim={internalConfig =>
-                    runSimulation(setIsLoading, internalConfig)
-                  }
-                />
-                <ButtonMain label='Clear Configs' handleClick={clearConfigs} />
-              </div>
-              <div>
-                <input
-                  id='num-trials-input'
-                  onChange={handleTrialsChange}
-                  type='number'
-                  value={numTrials}
-                />
-                <input
-                  id='bg-color-pick-input'
-                  type='color'
-                  className='color-picker'
-                  onChange={handleBackgroundColorChange}
-                  value={bgColor}
-                />
-              </div>
-            </div>
-          </div>
+          <button
+            id='button-show-inputs'
+            onClick={() => {
+              setShowInputs(!showInputs)
+            }}
+          >
+            Show Inputs
+          </button>
         </div>
       )}
     </div>

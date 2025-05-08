@@ -1,7 +1,7 @@
 import ButtonMain from './ButtonMain'
 import { useRef } from 'react'
 
-const JsonImportButton = ({ replaceConfigs, importRunSim }) => {
+const JsonImportButton = ({ replaceConfigs, importRunSim, showInputs }) => {
   const hiddenInputRef = useRef(null)
 
   const openFileDialogue = () => {
@@ -18,6 +18,7 @@ const JsonImportButton = ({ replaceConfigs, importRunSim }) => {
 
       replaceConfigs(configs)
       importRunSim(configs)
+      showInputs(false)
     } catch (error) {
       alert('Invalid JSON file: ' + error.message)
     }

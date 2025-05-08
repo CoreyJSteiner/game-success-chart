@@ -40,6 +40,15 @@ button {
         'opsz' 24
 }
 
+/* Show Inputs */
+#button-show-inputs {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    width: 100%;
+    padding: 6px;
+}
+
 /* Number Input */
 .number-input {
     display: inline-flex;
@@ -78,8 +87,8 @@ button {
 #loading-overlay {
     position: fixed;
     display: flex;
+    top: 50%;
     left: 50%;
-    top: 40%;
     transform: translate(-50%, -50%);
     width: 30%;
     height: 20%;
@@ -116,16 +125,36 @@ button {
 }
 
 /* Containers */
+/* #main-container {
+    display: flex;
+    flex-direction: column;
+} */
+
 #chart-container {
-    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+    z-index: 1;
+}
+
+#input-container {
+    position: fixed;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    padding: 20px;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 #group-button-container {
     display: flex;
     justify-content: center;
+    margin: 10px;
+    margin-top: 15px;
     gap: 5px;
+    min-height: 25px;
 }
 
 #group-button-container>button {
@@ -135,10 +164,6 @@ button {
 #top-button-container {
     display: flex;
     justify-content: space-between;
-}
-
-#input-container {
-    padding: 20px;
 }
 
 #num-input-cont {
