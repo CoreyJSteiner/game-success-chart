@@ -1,0 +1,604 @@
+{
+  "configs": [
+    {
+      "name": "1d10",
+      "lineColor": "#ff2600",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 0,
+      "id": "415e248a-32f1-4046-92b4-87df7d3b2ebd",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d12",
+      "lineColor": "#ff2600",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 1,
+      "id": "f179f30d-5fc3-4a25-a8b1-ca2c8cbfebf8",
+      "group": "Dice Level 1"
+    },
+    {
+      "name": "1d10C",
+      "lineColor": "#ff9380",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 1,
+      "d12": 0,
+      "id": "be6227d6-cb5b-4357-9b88-594c65e21287",
+      "group": "Dice Level 1 (C)"
+    },
+    {
+      "name": "1d12C",
+      "lineColor": "#ff9380",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 0,
+      "d12": 1,
+      "id": "dde435be-3be4-4540-bcdb-b695fc7c148c",
+      "group": "Dice Level 1 (C)"
+    },
+    {
+      "name": "1d10CC",
+      "lineColor": "#ff9380",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 1,
+      "d12": 0,
+      "id": "a1a00ba0-e665-42e3-932d-45c1f3dee1c3",
+      "group": "Dice Level 1 (C)"
+    },
+    {
+      "name": "1d12CC",
+      "lineColor": "#ff9380",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 0,
+      "d12": 1,
+      "id": "e14eb2d0-49fa-4302-9311-a4ce97aae458",
+      "group": "Dice Level 1 (C)"
+    },
+    {
+      "name": "1d10",
+      "lineColor": "#ff9300",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 0,
+      "id": "4c2c5372-94c8-4aed-ad90-2e89558a1840",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "1d101d12",
+      "lineColor": "#ff9300",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 1,
+      "id": "3f4fa197-4b9e-4da7-b528-c1f4687c82f1",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "2d12",
+      "lineColor": "#ff9300",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 2,
+      "id": "72199d6f-4e3e-4372-806c-6c286be093bd",
+      "group": "Dice Level 2"
+    },
+    {
+      "name": "2d10C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 2,
+      "d12": 0,
+      "id": "786cb463-d886-4ffb-a269-45839a814b6c",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "1d101d12C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 1,
+      "d12": 1,
+      "id": "50df524e-60cf-4fc6-aea6-5851ccd44450",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "1d12C",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 0,
+      "d12": 2,
+      "id": "37175ec3-1089-4c56-bac8-f6e44e523400",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "2d10CC",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 2,
+      "d12": 0,
+      "id": "7d9d7d87-6d71-4fea-8882-4af2e95d27d8",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "1d101d12CC",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 1,
+      "d12": 1,
+      "id": "9c6eaa58-01a6-4e23-9108-00403ad4b7a3",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "2d12CC",
+      "lineColor": "#ffc87d",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 0,
+      "d12": 2,
+      "id": "99825b32-ffe0-48a8-aac0-d69549e9e52f",
+      "group": "Dice Level 2 (C)"
+    },
+    {
+      "name": "3d10",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 0,
+      "id": "ca506788-2ada-4431-84b2-4371083d5884",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "2d101d12",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 1,
+      "id": "6305f861-a52e-476e-b9b5-9db5b7f69a3c",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "1d102d12",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 2,
+      "id": "a9141521-e316-4158-9a8d-d6cc9660a76f",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d12",
+      "lineColor": "#fffb00",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 3,
+      "id": "66f931e0-c314-496c-95ab-f27b0edf4e31",
+      "group": "Dice Level 3"
+    },
+    {
+      "name": "3d10C",
+      "lineColor": "#fffd80",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 3,
+      "d12": 0,
+      "id": "b3cb7bb0-dcfb-4396-924c-3b95902b2bb6",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "2d101d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 2,
+      "d12": 1,
+      "id": "3909ea66-903e-4668-b3ad-270e056ef2ec",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "1d102d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 1,
+      "d12": 2,
+      "id": "518d4434-8995-4378-9989-f314aa11b5a9",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "3d12C",
+      "lineColor": "#fffd80",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 0,
+      "d12": 3,
+      "id": "15ee034d-e083-48f5-a2a8-38630d485246",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "3d10CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 3,
+      "d12": 0,
+      "id": "cdfc4b6c-327f-4493-a39c-a1b42d113d33",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "2d101d12CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 2,
+      "d12": 1,
+      "id": "8d3ff11f-5444-4d00-8d08-718c4871a915",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "1d102d12CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 1,
+      "d12": 2,
+      "id": "a94dbf44-4f21-42d0-aee9-4c31f4da212d",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "3d12CC",
+      "lineColor": "#fffd80",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 0,
+      "d12": 3,
+      "id": "df0bd95c-f7eb-4073-8413-9fe9a6264736",
+      "group": "Dice Level 3 (C)"
+    },
+    {
+      "name": "4d10",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 4,
+      "d12": 0,
+      "id": "3e85f8f5-88cc-4487-94a0-df6ae6c7e494",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "3d101d12",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 1,
+      "id": "101a480a-cccf-461a-8eb2-b83e63008bb4",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "2d102d12",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 2,
+      "id": "4a1621cb-8a1a-4e7a-9914-34ecc3550d0b",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "1d103d12",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 3,
+      "id": "7ba6908e-cd9a-4f02-8b61-055fa15dcc58",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d12",
+      "lineColor": "#00f900",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 4,
+      "id": "14c8df54-2cea-4790-a4a9-23ec824864ef",
+      "group": "Dice Level 4"
+    },
+    {
+      "name": "4d10C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 4,
+      "d12": 0,
+      "id": "b6b0ae01-8546-4bbd-9ac2-eafc598a59cf",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "3d101d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 3,
+      "d12": 1,
+      "id": "d220e566-6b02-43db-9c5e-13a830ed99ee",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "2d102d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 2,
+      "d12": 2,
+      "id": "228bee89-bb44-41b0-a5f5-4e5177b0427f",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 1,
+      "d12": 3,
+      "id": "b5abfb2c-30df-4466-acf1-0c98af7f0733",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "4d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 0,
+      "d12": 4,
+      "id": "e8eda8ee-006e-490c-b60d-8e0014d64eb4",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "4d10C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 2,
+      "d10": 4,
+      "d12": 0,
+      "id": "0fe560ba-699b-4618-a99c-175a5a96aa5c",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "3d101d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 2,
+      "d10": 3,
+      "d12": 1,
+      "id": "3ccb55d4-c4f3-4def-9147-33315ecb423b",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "2d102d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 2,
+      "d10": 2,
+      "d12": 2,
+      "id": "fe8a163c-16c4-4588-a7d3-02032785075a",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 2,
+      "d10": 1,
+      "d12": 3,
+      "id": "a36ef4a6-d506-45eb-97d3-85c0c8020282",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "4d12C",
+      "lineColor": "#7df97d",
+      "lineStyle": "dashed",
+      "d4": 2,
+      "d10": 0,
+      "d12": 4,
+      "id": "f9a79cb5-35b2-4b7a-92c7-fe11b76d2fcd",
+      "group": "Dice Level 4 (C)"
+    },
+    {
+      "name": "5d10",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 5,
+      "d12": 0,
+      "id": "055ee5c3-cff9-4c54-86f8-8186f2796bdf",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "4d101d12",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 4,
+      "d12": 1,
+      "id": "ab573641-65ae-4f06-af69-5e8781dc52eb",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "3d102d12",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 3,
+      "d12": 2,
+      "id": "dcd89428-3a99-47b3-ad18-e2673d7ad1cc",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d103d12",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 2,
+      "d12": 3,
+      "id": "cfff4a12-f0fe-47bd-a654-57f9ca9f5f55",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "1d104d12",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 1,
+      "d12": 4,
+      "id": "68dafe0c-d933-480a-af3c-2042af7b2b61",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d12",
+      "lineColor": "#0433ff",
+      "lineStyle": "solid",
+      "d4": 0,
+      "d10": 0,
+      "d12": 5,
+      "id": "37dd24d2-c38d-45c2-8274-7e72590476c6",
+      "group": "Dice Level 5"
+    },
+    {
+      "name": "5d10C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 5,
+      "d12": 0,
+      "id": "60d7d9e2-2235-4915-8325-400f4197bf26",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "4d101d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 4,
+      "d12": 1,
+      "id": "70627376-1d79-4b03-b31e-815d0aff5728",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "3d102d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 3,
+      "d12": 2,
+      "id": "07d7245d-4722-4f2c-8c53-773eda3809cf",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "1d103d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 2,
+      "d12": 3,
+      "id": "df0c1300-bc44-4ddc-9baf-d312af19b8b3",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "1d104d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 1,
+      "d12": 4,
+      "id": "2e1abfda-0a35-4194-a433-abd674b10d41",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "5d12C",
+      "lineColor": "#8097ff",
+      "lineStyle": "dashed",
+      "d4": 1,
+      "d10": 0,
+      "d12": 5,
+      "id": "de088c78-7430-4e1b-bbb0-6e18d99ae934",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "5d10CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 5,
+      "d12": 0,
+      "id": "e0ccbdcd-05cf-4dc2-bc8d-5f399092c2d9",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "4d101d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 4,
+      "d12": 1,
+      "id": "41e3b482-121d-4d29-b452-e2a39aa53638",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "3d102d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 3,
+      "d12": 2,
+      "id": "dd45cf0d-b210-4af4-9725-183cf4f03188",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "1d103d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 2,
+      "d12": 3,
+      "id": "3730f2fd-a85d-48c0-a876-eba33a5a4afb",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "1d104d12CC",
+      "lineColor": "#8097ff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 1,
+      "d12": 4,
+      "id": "7e807088-63df-4055-8346-25595ebcc4c1",
+      "group": "Dice Level 5 (C)"
+    },
+    {
+      "name": "5d12CC",
+      "lineColor": "#849bff",
+      "lineStyle": "dotted",
+      "d4": 2,
+      "d10": 0,
+      "d12": 5,
+      "id": "15b3090e-ca23-48e9-bece-8f162045b3ef",
+      "group": "Dice Level 5 (C)"
+    }
+  ]
+}

@@ -136,6 +136,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-content: center;
+    gap: 10px;
     margin: 10px;
     margin-top: 15px;
 }
@@ -146,6 +147,7 @@ button {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    flex-shrink: 0;
 }
 
 #input-container {
@@ -165,6 +167,8 @@ button {
     justify-content: center;
     gap: 5px;
     min-height: 25px;
+
+    overflow-x: scroll;
 }
 
 #top-button-container {

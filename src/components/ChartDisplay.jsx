@@ -5,6 +5,7 @@ import ButtonMain from './ButtonMain'
 const ChartDisplay = ({ currentData }) => {
   const [groups, setGroups] = useState([])
   const [yAxisLock, setYAxisLock] = useState(true)
+  const [yAxisLockToggling, setYAxisLockToggling] = useState(false)
   const chartRef = useRef(null)
   const chartInstanceRef = useRef(null)
   const { labels, datasets } = currentData
@@ -134,14 +135,21 @@ const ChartDisplay = ({ currentData }) => {
   }
 
   const toggleYAxisLock = () => {
+    if (yAxisLockToggling) return
+    setYAxisLockToggling(true)
+
     const chart = chartInstanceRef.current
     if (!chart) return
+    console.log(yAxisLock)
 
     const invertedToggleValue = !yAxisLock
     chart.options.scales.y.max = invertedToggleValue ? 1 : undefined
-    chart.update()
-
-    setYAxisLock(invertedToggleValue)
+    try {
+      chart.update()
+    } finally {
+      setYAxisLock(invertedToggleValue)
+      setYAxisLockToggling(false)
+    }
   }
 
   return (

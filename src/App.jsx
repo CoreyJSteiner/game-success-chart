@@ -7,7 +7,7 @@ import ButtonMain from './components/ButtonMain'
 import LoadingOverlay from './components/LoadingOverlay'
 import useJsonExport from './components/JsonExport'
 import JsonImportButton from './components/JsonImport'
-import jsonAllConfigsDefault from '../exports/all_withGroups.json'
+import jsonAllConfigsDefault from '../exports/defaultConfigs.json'
 
 function App () {
   const {
