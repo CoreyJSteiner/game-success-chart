@@ -29,6 +29,7 @@ const useRunSim = () => {
         data: allKeys.map(key => config.data[key] || 0),
         borderColor: config.lineColor,
         borderDash: getBorderDash(config.lineStyle),
+        borderWidth: 2.6,
         tension: 0.1,
         group: config.group
       }))
@@ -36,11 +37,11 @@ const useRunSim = () => {
       function getBorderDash (style) {
         switch (style) {
           case 'dashed':
-            return [10, 5]
+            return [12, 9]
           case 'dotted':
-            return [3, 3]
+            return [3, 9]
           case 'dashDot':
-            return [10, 5, 3, 5]
+            return [9, 5, 3, 5]
           default:
             return []
         }

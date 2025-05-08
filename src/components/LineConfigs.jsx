@@ -31,14 +31,12 @@ const useLineConfigs = () => {
 
   const duplicateConfig = id => {
     const config = getConfigById(id)
-    console.dir(config)
     if (config) addConfig(config)
   }
 
   const getConfigById = id => {
     let config = null
     lineConfigs.forEach(c => {
-      console.log(`${id}===${c.id}`)
       if (c.id === id) {
         config = c
       }

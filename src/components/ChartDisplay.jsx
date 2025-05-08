@@ -3,15 +3,18 @@ import Chart from 'chart.js/auto'
 import ButtonMain from './ButtonMain'
 
 const ChartDisplay = ({ currentData }) => {
+  const { labels, datasets } = currentData
   const [groups, setGroups] = useState([])
   const [yAxisLock, setYAxisLock] = useState(true)
-  const [yAxisLockToggling, setYAxisLockToggling] = useState(false)
+  const loadingRef = useRef(false)
+  const canvasRef = useRef(null)
   const chartRef = useRef(null)
-  const chartInstanceRef = useRef(null)
-  const { labels, datasets } = currentData
 
   useEffect(() => {
     if (!datasets) return
+    if (loadingRef.current) return
+    loadingRef.current = true
+
     const uniqueGroups = new Set()
 
     datasets.forEach(dataset => {
@@ -22,12 +25,12 @@ const ChartDisplay = ({ currentData }) => {
 
     setGroups(Array.from(uniqueGroups))
 
-    if (chartInstanceRef.current) {
-      chartInstanceRef.current.destroy()
+    if (chartRef.current) {
+      chartRef.current.destroy()
     }
 
-    const ctx = chartRef.current.getContext('2d')
-    chartInstanceRef.current = new Chart(ctx, {
+    const ctx = canvasRef.current.getContext('2d')
+    chartRef.current = new Chart(ctx, {
       type: 'line',
       data: { labels, datasets },
       options: {
@@ -44,13 +47,14 @@ const ChartDisplay = ({ currentData }) => {
               }
             },
             beginAtZero: true,
-            max: 1,
+            max: yAxisLock ? 1 : undefined,
             ticks: {
               color: '#ffffff',
               font: {
                 family: 'Arial, sans-serif',
                 size: 12
               },
+              stepSize: 0.1,
               callback: value => `${(value * 100).toFixed(1)}%`
             },
             grid: {
@@ -116,15 +120,17 @@ const ChartDisplay = ({ currentData }) => {
       }
     })
 
+    loadingRef.current = false
+
     return () => {
-      if (chartInstanceRef.current) {
-        chartInstanceRef.current.destroy()
+      if (chartRef.current) {
+        chartRef.current.destroy()
       }
     }
   }, [datasets])
 
   const toggleGroup = group => {
-    const chart = chartInstanceRef.current
+    const chart = chartRef.current
     chart.data.datasets.forEach((dataset, index) => {
       if (dataset.group === group) {
         const meta = chart.getDatasetMeta(index)
@@ -135,21 +141,13 @@ const ChartDisplay = ({ currentData }) => {
   }
 
   const toggleYAxisLock = () => {
-    if (yAxisLockToggling) return
-    setYAxisLockToggling(true)
-
-    const chart = chartInstanceRef.current
+    const chart = chartRef.current
     if (!chart) return
-    console.log(yAxisLock)
 
     const invertedToggleValue = !yAxisLock
     chart.options.scales.y.max = invertedToggleValue ? 1 : undefined
-    try {
-      chart.update()
-    } finally {
-      setYAxisLock(invertedToggleValue)
-      setYAxisLockToggling(false)
-    }
+    chart.update()
+    setYAxisLock(invertedToggleValue)
   }
 
   return (
@@ -158,7 +156,7 @@ const ChartDisplay = ({ currentData }) => {
         <div id='group-button-container'>
           {groups.map(group => (
             <ButtonMain
-              key={crypto.randomUUID()}
+              key={group + Date.now()}
               label={group}
               handleClick={() => toggleGroup(group)}
             />
@@ -169,7 +167,7 @@ const ChartDisplay = ({ currentData }) => {
           handleClick={toggleYAxisLock}
         ></ButtonMain>
       </div>
-      <canvas ref={chartRef} />
+      <canvas ref={canvasRef} />
     </div>
   )
 }

@@ -25,21 +25,17 @@ function App () {
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
   const [showInputs, setShowInputs] = useState(false)
+  const runningSim = useRef(false)
 
   //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
 
   useEffect(() => {
-    // addConfig({ name: '1d12+1d4', d12: 1, d4: 1, lineColor: '#7DF9FF' })
-    runConfigs(jsonAllConfigsDefault.configs)
-  }, [])
-
-  useEffect(() => {
-    if (initialLoadRef.current && lineConfigs.length > 0) {
-      runSimulation(setIsLoading, lineConfigs)
+    if (initialLoadRef.current) {
+      runConfigs(jsonAllConfigsDefault.configs)
       initialLoadRef.current = false
     }
-  }, [lineConfigs])
+  }, [])
 
   const importJson = async jsonFile => {
     try {
@@ -55,11 +51,16 @@ function App () {
   }
 
   const runConfigs = async configs => {
+    if (runningSim.current) return
+    runningSim.current = true
     replaceConfigs(configs)
     try {
-      runSimulation(setIsLoading, configs)
+      await runSimulation(setIsLoading, configs)
+    } catch {
+      console.log('Error running sim')
     } finally {
       setShowInputs(false)
+      runningSim.current = false
     }
   }
 
