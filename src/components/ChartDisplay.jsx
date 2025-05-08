@@ -2,8 +2,9 @@ import { useRef, useEffect, useState } from 'react'
 import Chart from 'chart.js/auto'
 import ButtonMain from './ButtonMain'
 
-const ChartDisplay = ({ currentData, yAxisLocked }) => {
+const ChartDisplay = ({ currentData }) => {
   const [groups, setGroups] = useState([])
+  const [yAxisLock, setYAxisLock] = useState(true)
   const chartRef = useRef(null)
   const chartInstanceRef = useRef(null)
   const { labels, datasets } = currentData
@@ -42,7 +43,7 @@ const ChartDisplay = ({ currentData, yAxisLocked }) => {
               }
             },
             beginAtZero: true,
-            max: yAxisLocked ? 1 : undefined,
+            max: 1,
             ticks: {
               color: '#ffffff',
               font: {
@@ -132,16 +133,33 @@ const ChartDisplay = ({ currentData, yAxisLocked }) => {
     chart.update()
   }
 
+  const toggleYAxisLock = () => {
+    const chart = chartInstanceRef.current
+    if (!chart) return
+
+    const invertedToggleValue = !yAxisLock
+    chart.options.scales.y.max = invertedToggleValue ? 1 : undefined
+    chart.update()
+
+    setYAxisLock(invertedToggleValue)
+  }
+
   return (
     <div id='chart-container'>
-      <div id='group-button-container'>
-        {groups.map(group => (
-          <ButtonMain
-            key={crypto.randomUUID()}
-            label={group}
-            handleClick={() => toggleGroup(group)}
-          />
-        ))}
+      <div id='chart-top'>
+        <div id='group-button-container'>
+          {groups.map(group => (
+            <ButtonMain
+              key={crypto.randomUUID()}
+              label={group}
+              handleClick={() => toggleGroup(group)}
+            />
+          ))}
+        </div>
+        <ButtonMain
+          label='Lock Y Axis'
+          handleClick={toggleYAxisLock}
+        ></ButtonMain>
       </div>
       <canvas ref={chartRef} />
     </div>

@@ -125,15 +125,27 @@ button {
 }
 
 /* Containers */
-/* #main-container {
-    display: flex;
-    flex-direction: column;
-} */
 
 #chart-container {
     margin-left: auto;
     margin-right: auto;
     z-index: 1;
+}
+
+#chart-top {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 10px;
+    margin-top: 15px;
+}
+
+#chart-top button {
+    min-width: 50px;
+    max-height: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #input-container {
@@ -151,17 +163,8 @@ button {
 #group-button-container {
     display: flex;
     justify-content: center;
-    margin: 10px;
-    margin-top: 15px;
     gap: 5px;
     min-height: 25px;
-}
-
-#group-button-container>button {
-    min-width: 50px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 #top-button-container {
