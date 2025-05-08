@@ -7,7 +7,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
   }
 
   return (
-    <div className='config-box' id={lineConfig.id}>
+    <div className='config' id={lineConfig.id}>
       <div id='config-header'>
         <div id='config-controls'>
           {/* <ButtonLineConfig iconName='arrow_left' /> */}
@@ -32,7 +32,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
             value={lineConfig.lineColor}
           />
           <select
-            id='line-style'
+            id='line-style-dropdown'
             onChange={e => handleChange('lineStyle', e.target.value)}
             value={lineConfig.lineStyle}
           >
