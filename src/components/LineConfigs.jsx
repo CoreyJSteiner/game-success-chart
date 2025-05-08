@@ -11,7 +11,8 @@ const useLineConfigs = () => {
       lineStyle: input.lineStyle || 'solid',
       d4: input.d4 || 0,
       d10: input.d10 || 0,
-      d12: input.d12 || 0
+      d12: input.d12 || 0,
+      group: ''
     }
     setLineConfigs([...lineConfigs, { ...config, id: crypto.randomUUID() }])
   }

@@ -1,18 +1,33 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Chart from 'chart.js/auto'
+import ButtonMain from './ButtonMain'
 
 const ChartDisplay = ({ currentData, yAxisLocked }) => {
+  const [groups, setGroups] = useState([])
   const chartRef = useRef(null)
+  const chartInstanceRef = useRef(null)
   const { labels, datasets } = currentData
-  const allKeys = labels
 
   useEffect(() => {
     if (!datasets) return
+    const uniqueGroups = new Set()
+
+    datasets.forEach(dataset => {
+      if (dataset.group) {
+        uniqueGroups.add(dataset.group)
+      }
+    })
+
+    setGroups(Array.from(uniqueGroups))
+
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.destroy()
+    }
 
     const ctx = chartRef.current.getContext('2d')
-    const chart = new Chart(ctx, {
+    chartInstanceRef.current = new Chart(ctx, {
       type: 'line',
-      data: { labels: allKeys, datasets },
+      data: { labels, datasets },
       options: {
         scales: {
           y: {
@@ -99,11 +114,35 @@ const ChartDisplay = ({ currentData, yAxisLocked }) => {
       }
     })
 
-    return () => chart.destroy()
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy()
+      }
+    }
   }, [datasets])
+
+  const toggleGroup = group => {
+    const chart = chartInstanceRef.current
+    chart.data.datasets.forEach((dataset, index) => {
+      if (dataset.group === group) {
+        const meta = chart.getDatasetMeta(index)
+        meta.hidden = !meta.hidden
+      }
+    })
+    chart.update()
+  }
 
   return (
     <div id='chart-container'>
+      <div id='group-button-container'>
+        {groups.map(group => (
+          <ButtonMain
+            key={crypto.randomUUID()}
+            label={group}
+            handleClick={() => toggleGroup(group)}
+          />
+        ))}
+      </div>
       <canvas ref={chartRef} />
     </div>
   )

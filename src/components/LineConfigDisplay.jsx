@@ -64,6 +64,12 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
           value={lineConfig.d12}
         />
       </div>
+      <input
+        type='text'
+        id='config-group'
+        onChange={e => handleChange('group', e.target.value)}
+        value={lineConfig.group}
+      />
     </div>
   )
 }

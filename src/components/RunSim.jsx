@@ -29,7 +29,8 @@ const useRunSim = () => {
         data: allKeys.map(key => config.data[key] || 0),
         borderColor: config.lineColor,
         borderDash: getBorderDash(config.lineStyle),
-        tension: 0.1
+        tension: 0.1,
+        group: config.group
       }))
 
       function getBorderDash (style) {
