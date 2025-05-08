@@ -157,7 +157,7 @@ const ChartDisplay = ({ currentData }) => {
           ))}
         </div>
         <ButtonMain
-          label='Lock Y Axis'
+          label={yAxisLock ? 'Unlock Y Axis' : 'Lock Y Axis'}
           handleClick={toggleYAxisLock}
         ></ButtonMain>
       </div>
