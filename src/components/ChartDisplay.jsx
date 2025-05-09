@@ -2,10 +2,11 @@ import { useRef, useEffect, useState } from 'react'
 import Chart from 'chart.js/auto'
 import ButtonMain from './ButtonMain'
 
-const ChartDisplay = ({ currentData }) => {
+const ChartDisplay = ({ currentData, toggleInputsDisplay }) => {
   const { labels, datasets } = currentData
   const [groups, setGroups] = useState([])
   const [yAxisLock, setYAxisLock] = useState(true)
+  const [chartMounted, setChartMounted] = useState(false)
   const loadingRef = useRef(false)
   const canvasRef = useRef(null)
   const chartRef = useRef(null)
@@ -121,6 +122,7 @@ const ChartDisplay = ({ currentData }) => {
     })
 
     loadingRef.current = false
+    setChartMounted(true)
 
     return () => {
       if (chartRef.current) {
@@ -152,22 +154,34 @@ const ChartDisplay = ({ currentData }) => {
 
   return (
     <div id='chart-container'>
-      <div id='chart-top'>
-        <div id='group-button-container'>
-          {groups.map(group => (
-            <ButtonMain
-              key={group + Date.now()}
-              label={group}
-              handleClick={() => toggleGroup(group)}
-            />
-          ))}
+      {chartMounted && (
+        <div id='chart-top'>
+          <div id='group-button-container'>
+            {groups.map(group => (
+              <ButtonMain
+                key={group + Date.now()}
+                label={group}
+                handleClick={() => toggleGroup(group)}
+              />
+            ))}
+          </div>
+          <ButtonMain
+            label={yAxisLock ? 'Unlock Y Axis' : 'Lock Y Axis'}
+            handleClick={toggleYAxisLock}
+          ></ButtonMain>
         </div>
-        <ButtonMain
-          label={yAxisLock ? 'Unlock Y Axis' : 'Lock Y Axis'}
-          handleClick={toggleYAxisLock}
-        ></ButtonMain>
-      </div>
+      )}
       <canvas ref={canvasRef} />
+      {chartMounted && (
+        <button
+          id='button-show-inputs'
+          onClick={() => {
+            toggleInputsDisplay()
+          }}
+        >
+          Show Inputs
+        </button>
+      )}
     </div>
   )
 }

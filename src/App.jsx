@@ -31,9 +31,13 @@ function App () {
   const initialLoadRef = useRef(true)
 
   useEffect(() => {
-    if (initialLoadRef.current) {
-      runConfigs(jsonAllConfigsDefault.configs)
+    const initialLoad = async () => {
+      await runConfigs(jsonAllConfigsDefault.configs)
       initialLoadRef.current = false
+    }
+
+    if (initialLoadRef.current) {
+      initialLoad()
     }
   }, [])
 
@@ -83,6 +87,7 @@ function App () {
   return (
     <div id='page-container' style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
+
       {showInputs && (
         <div id='input-container'>
           <div id='top-button-container'>
@@ -142,17 +147,11 @@ function App () {
         <div id='main-container'>
           <ChartDisplay
             currentData={currentData}
-            isLoading={false}
-            yAxisLocked={yAxisLocked}
-          />
-          <button
-            id='button-show-inputs'
-            onClick={() => {
+            displayInputs={showInputs}
+            toggleInputsDisplay={() => {
               setShowInputs(!showInputs)
             }}
-          >
-            Show Inputs
-          </button>
+          />
         </div>
       )}
     </div>
