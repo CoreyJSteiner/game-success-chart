@@ -7,6 +7,10 @@ export const getRandomColor = () => {
   )
 }
 
+export const wait = milliseconds => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 export const rollDie = sides => {
   return Math.floor(Math.random() * sides) + 1
 }

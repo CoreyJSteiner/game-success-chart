@@ -7,6 +7,7 @@ import ButtonMain from './components/ButtonMain'
 import LoadingOverlay from './components/LoadingOverlay'
 import useJsonExport from './components/JsonExport'
 import JsonImportButton from './components/JsonImport'
+import InitialLoadFader from './components/InitialLoadFader'
 import jsonAllConfigsDefault from '../exports/defaultConfigs.json'
 
 function App () {
@@ -21,7 +22,7 @@ function App () {
   } = useLineConfigs()
   const { exportToJSON } = useJsonExport()
   const { currentData, numTrials, setNumTrials, runSimulation } = useRunSim()
-  const [yAxisLocked] = useState(true)
+  const [chartMounted, setChartMounted] = useState(false)
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
   const [showInputs, setShowInputs] = useState(false)
@@ -87,6 +88,7 @@ function App () {
   return (
     <div id='page-container' style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
+      <InitialLoadFader triggerFade={chartMounted} />
 
       {showInputs && (
         <div id='input-container'>
@@ -151,6 +153,8 @@ function App () {
             toggleInputsDisplay={() => {
               setShowInputs(!showInputs)
             }}
+            chartMounted={chartMounted}
+            setChartMounted={setChartMounted}
           />
         </div>
       )}

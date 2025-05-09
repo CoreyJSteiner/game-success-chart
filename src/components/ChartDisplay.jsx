@@ -2,11 +2,16 @@ import { useRef, useEffect, useState } from 'react'
 import Chart from 'chart.js/auto'
 import ButtonMain from './ButtonMain'
 
-const ChartDisplay = ({ currentData, toggleInputsDisplay }) => {
+const ChartDisplay = ({
+  currentData,
+  toggleInputsDisplay,
+  chartMounted,
+  setChartMounted
+}) => {
   const { labels, datasets } = currentData
   const [groups, setGroups] = useState([])
   const [yAxisLock, setYAxisLock] = useState(true)
-  const [chartMounted, setChartMounted] = useState(false)
+  // const [chartMounted, setChartMounted] = useState(false)
   const loadingRef = useRef(false)
   const canvasRef = useRef(null)
   const chartRef = useRef(null)
