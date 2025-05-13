@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { rollDie } from '../utils'
+import { rollDie, maxSuccesses } from '../utils'
 const DECIMAL_PLACE = 2
 
 const useRunSim = () => {
@@ -84,38 +84,7 @@ const useRunSim = () => {
 
     const remainingValues = dice.filter(d => d.value < 10).map(d => d.value)
 
-    let summedSuccesses = 0
-    const sortedValues = remainingValues.sort((a, b) => b - a)
-
-    while (sortedValues.length > 0) {
-      const current = sortedValues.shift()
-      let target = 10 - current
-      let found = false
-
-      if (target < 0) continue
-      if (target === 0) {
-        summedSuccesses++
-        continue
-      }
-
-      let sum = 0
-      const usedIndices = []
-      for (let i = sortedValues.length - 1; i >= 0; i--) {
-        if (sum + sortedValues[i] <= target) {
-          sum += sortedValues[i]
-          usedIndices.push(i)
-          if (sum === target) {
-            found = true
-            break
-          }
-        }
-      }
-
-      if (found) {
-        summedSuccesses++
-        usedIndices.reverse().forEach(i => sortedValues.splice(i, 1))
-      }
-    }
+    let summedSuccesses = maxSuccesses(remainingValues)
 
     return initialSuccesses + summedSuccesses
   }
