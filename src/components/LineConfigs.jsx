@@ -6,7 +6,7 @@ const useLineConfigs = () => {
 
   const addConfig = input => {
     const config = {
-      name: input.name || '1d10',
+      name: input.name || '',
       lineColor: input.lineColor || getRandomColor(),
       lineStyle: input.lineStyle || 'solid',
       d4: input.d4 || 0,

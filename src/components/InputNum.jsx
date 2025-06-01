@@ -1,4 +1,4 @@
-const InputNum = ({ label, value = 0, onChange, min = 0, max = 5 }) => {
+const InputNum = ({ label, value = 0, onChange, min = 0, max = 5, ref }) => {
   const handleChange = newValue => {
     const num = Math.max(min, Math.min(max, Number(newValue)))
     onChange(num)
@@ -10,6 +10,7 @@ const InputNum = ({ label, value = 0, onChange, min = 0, max = 5 }) => {
       <div className='number-input'>
         <button onClick={() => handleChange(value - 1)}>-</button>
         <input
+          ref={ref}
           type='number'
           onChange={() => handleChange(e.target.value)}
           min={min}
