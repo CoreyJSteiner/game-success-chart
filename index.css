@@ -237,11 +237,10 @@ input.color-picker:hover {
     flex-direction: column;
     border: 1px solid #ccc;
     padding: 15px;
-    /* margin: 10px; */
     border-radius: 5px;
     background: #f9f9f9;
-    min-width: 500px;
-    max-width: 500px;
+    width: 500px;
+    height: fit-content;
 }
 
 #config-controls {
@@ -252,12 +251,14 @@ input.color-picker:hover {
 
 #configurations-container {
     display: grid;
-    width: auto;
+    width: 1620px;
     height: 60vh;
-    overflow-x: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    overflow-y: auto;
+    align-content: start;
+    justify-content: start;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: min-content;
+    gap: 10px;
     padding: 5px;
 
     --mask: linear-gradient(to bottom,
