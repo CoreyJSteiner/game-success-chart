@@ -27,6 +27,7 @@ function App () {
   const [isLoading, setIsLoading] = useState(true)
   const [showInputs, setShowInputs] = useState(false)
   const runningSim = useRef(false)
+  const configsContainer = useRef(null)
 
   //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
@@ -85,6 +86,11 @@ function App () {
     return runSimulation(setIsLoading, lineConfigs)
   }
 
+  const handleDuplicate = configId => {
+    configsContainer.current.scrollLeft = configsContainer.current.scrollWidth
+    duplicateConfig(configId)
+  }
+
   return (
     <div id='page-container' style={{ backgroundColor: { bgColor } }}>
       <LoadingOverlay loading={isLoading} />
@@ -104,14 +110,14 @@ function App () {
             </div>
           </div>
 
-          <div id='configurations-container'>
+          <div id='configurations-container' ref={configsContainer}>
             {lineConfigs.map(config => (
               <LineConfigDisplay
                 key={config.id}
                 lineConfig={config}
                 onUpdate={updated => updateConfig(config.id, updated)}
                 onRemove={() => removeConfig(config.id)}
-                onDuplicate={() => duplicateConfig(config.id)}
+                onDuplicate={() => handleDuplicate(config.id)}
               />
             ))}
           </div>
