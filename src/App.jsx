@@ -28,6 +28,7 @@ function App () {
   const [showInputs, setShowInputs] = useState(false)
   const runningSim = useRef(false)
   const configsContainer = useRef(null)
+  const botttomConfigsRef = useRef(null)
 
   //Initial Load handles double invocations casued by strict mode in developemnt
   const initialLoadRef = useRef(true)
@@ -47,8 +48,8 @@ function App () {
     const container = configsContainer.current
 
     if (container) {
-      if (container.scrollLeft !== container.scrollWidth) {
-        container.scrollLeft = container.scrollWidth
+      if (container.scrollTop !== container.scrollHeight) {
+        botttomConfigsRef?.current.scrollIntoView({ behavior: 'smooth' })
       }
     }
   }, [lineConfigs])
@@ -138,6 +139,10 @@ function App () {
                 onDuplicate={() => handleDuplicate(config.id)}
               />
             ))}
+            <div
+              id='configurations-container-bottom'
+              ref={botttomConfigsRef}
+            ></div>
           </div>
 
           <div id='settings-buttons-container'>
