@@ -100,6 +100,12 @@ const ChartDisplay = ({
                 family: 'Arial, sans-serif',
                 size: 12
               }
+            },
+            onHover: event => {
+              event.native.target.style.cursor = 'pointer'
+            },
+            onLeave: event => {
+              event.native.target.style.cursor = 'default'
             }
           },
           tooltip: {
@@ -122,6 +128,10 @@ const ChartDisplay = ({
                 )}%`
             }
           }
+        },
+        onHover: (event, chartElements) => {
+          event.chart.canvas.style.cursor =
+            chartElements.length > 0 ? 'pointer' : 'default'
         }
       }
     })

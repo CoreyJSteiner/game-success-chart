@@ -121,11 +121,16 @@ function App () {
                 handleClick={handleAddConfig}
               />
             </div>
-            <div>
-              <ButtonMain
-                label='Run Simulation'
-                handleClick={handleRunSimClick}
-              />
+            <div id='top-buttons-right-side'>
+              <div>
+                <ButtonMain
+                  label='Run Simulation'
+                  handleClick={handleRunSimClick}
+                />
+              </div>
+              <button class='close-button' onClick={() => setShowInputs(false)}>
+                <span className='material-symbols-outlined'>close</span>
+              </button>
             </div>
           </div>
 
