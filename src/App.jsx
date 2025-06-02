@@ -43,6 +43,16 @@ function App () {
     }
   }, [])
 
+  useEffect(() => {
+    const container = configsContainer.current
+
+    if (container) {
+      if (container.scrollLeft !== container.scrollWidth) {
+        container.scrollLeft = container.scrollWidth
+      }
+    }
+  }, [lineConfigs])
+
   const importJson = async jsonFile => {
     try {
       if (!jsonFile) return
@@ -86,9 +96,14 @@ function App () {
     return runSimulation(setIsLoading, lineConfigs)
   }
 
-  const handleDuplicate = configId => {
+  const handleAddConfig = input => {
+    addConfig(input)
     configsContainer.current.scrollLeft = configsContainer.current.scrollWidth
+  }
+
+  const handleDuplicate = configId => {
     duplicateConfig(configId)
+    configsContainer.current.scrollLeft = configsContainer.current.scrollWidth
   }
 
   return (
@@ -100,7 +115,10 @@ function App () {
         <div id='input-container'>
           <div id='top-button-container'>
             <div>
-              <ButtonMain label='Add Configuration' handleClick={addConfig} />
+              <ButtonMain
+                label='Add Configuration'
+                handleClick={handleAddConfig}
+              />
             </div>
             <div>
               <ButtonMain
