@@ -90,6 +90,7 @@ const LineConfigDisplay = ({ lineConfig, onUpdate, onRemove, onDuplicate }) => {
         id='config-group'
         onChange={e => handleChange('group', e.target.value)}
         value={lineConfig.group}
+        placeholder='Group name'
       />
     </div>
   )

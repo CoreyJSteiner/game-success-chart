@@ -26,6 +26,7 @@ function App () {
   const [bgColor, setBgColor] = useState('#0a0a23')
   const [isLoading, setIsLoading] = useState(true)
   const [showInputs, setShowInputs] = useState(false)
+  const [triggerScrollVal, setTriggerScrollVal] = useState(false)
   const runningSim = useRef(false)
   const configsContainer = useRef(null)
   const botttomConfigsRef = useRef(null)
@@ -52,7 +53,7 @@ function App () {
         botttomConfigsRef?.current.scrollIntoView({ behavior: 'smooth' })
       }
     }
-  }, [lineConfigs])
+  }, [triggerScrollVal])
 
   const importJson = async jsonFile => {
     try {
@@ -99,12 +100,16 @@ function App () {
 
   const handleAddConfig = input => {
     addConfig(input)
-    configsContainer.current.scrollLeft = configsContainer.current.scrollWidth
+    triggerScrollBottom()
   }
 
   const handleDuplicate = configId => {
     duplicateConfig(configId)
-    configsContainer.current.scrollLeft = configsContainer.current.scrollWidth
+    triggerScrollBottom()
+  }
+
+  const triggerScrollBottom = () => {
+    setTriggerScrollVal(!triggerScrollVal)
   }
 
   return (
